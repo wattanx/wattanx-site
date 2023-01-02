@@ -1,0 +1,101 @@
+---
+import { Image } from "@astrojs/image/components";
+import Layout from "../layouts/Layout.astro";
+import { NavigationButton } from "../components/NavigationButton";
+import Card from "../components/Card.astro";
+import MainVisual from "../../public/cat.png";
+---
+
+<Layout title="Welcome to Astro.">
+  <main class="flex-1 pt-28 overflow-x-hidden">
+    <section
+      class="pt-11 px-0 pb-8 container flex justify-center items-center flex-col"
+    >
+      <div class="flex max-w-[400px] container py-0 px-5 justify-center">
+        <div
+          class="flex justify-center items-center w-full relative rounded-[37px] border-[3px] py-8 border-white"
+        >
+          <div class="w-24 h-24 absolute top-[-70px]">
+            <Image
+              class="rounded-full"
+              src={MainVisual}
+              alt="wattanx"
+              height="96"
+              width="96"
+            />
+          </div>
+          <div class="flex space-y-4 flex-col">
+            <h1 class="text-5xl font-bold text-center p-2 text-white">
+              wattanx
+            </h1>
+            <p class="text-xl font-medium text-center mt-3 text-white">
+              Software Developer
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="flex space-y-7 flex-col max-w-[400px] container p-5 mt-5">
+        <NavigationButton
+          href="/timeline"
+          text="Timeline"
+          borderColor="border-pink-500"
+        />
+        <NavigationButton
+          href="/blog"
+          text="Blog"
+          borderColor="border-yellow-500"
+        />
+        <NavigationButton
+          href="/about"
+          text="About"
+          borderColor="border-blue-500"
+        />
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1.5rem;
+    max-width: 60ch;
+  }
+  h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0;
+  }
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+  .instructions {
+    line-height: 1.6;
+    margin: 1rem 0;
+    border: 1px solid rgba(var(--accent), 25%);
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.4rem;
+  }
+  .instructions code {
+    font-size: 0.875em;
+    font-weight: bold;
+    background: rgba(var(--accent), 12%);
+    color: rgb(var(--accent));
+    border-radius: 4px;
+    padding: 0.3em 0.45em;
+  }
+  .instructions strong {
+    color: rgb(var(--accent));
+  }
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 1rem;
+    padding: 0;
+  }
+</style>
