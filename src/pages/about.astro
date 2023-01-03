@@ -1,5 +1,41 @@
 ---
+import { GitHubCard } from "../components/GitHubCard";
+import { ExternalLinkAlt } from "../components/ExternalLinkAlt";
+import { SiteHeader } from "../components/SiteHeader";
+import { getRepositoryInfo } from "../framework/github/createClient";
 import Layout from "../layouts/Layout.astro";
+
+const repoInfo = await getRepositoryInfo();
 ---
 
-<Layout title="About"><div>Comming Soon.</div></Layout>
+<Layout title="wattanx｜About">
+  <SiteHeader borderBottomColor="border-b-blue-500" />
+  <main class="my-0 mx-auto max-w-[850px] py-0 px-6">
+    <div class="pt-11 pb-8 px-0">
+      <h1
+        class="font-bold text-4xl underline decoration-blue-500 underline-offset-8"
+      >
+        About
+      </h1>
+    </div>
+    <div class="flex flex-col space-y-6">
+      <div class="max-w-[400px]">
+        <p>I'm wattanx. A software developer based in Japan.</p>
+        <a
+          class="flex items-center flex-row underline font-medium"
+          target="_blank"
+          rel="nofollow noopener"
+          href={import.meta.env.FORMURL}
+        >
+          CONTACT
+          <div class="mx-1"></div>
+          <ExternalLinkAlt />
+        </a>
+      </div>
+      <h2 class="text-lg">Top Repositories</h2>
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+        {repoInfo.map((x) => <GitHubCard {...x} />)}
+      </div>
+    </div>
+  </main>
+</Layout>

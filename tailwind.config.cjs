@@ -41,6 +41,11 @@ module.exports = {
       },
       white: "#FFFFFF",
     },
+    fontFamily: {
+      body: "system-ui, sans-serif",
+      heading: "Georgia, serif",
+      mono: "Menlo, monospace",
+    },
     extend: {},
   },
   plugins: [],
