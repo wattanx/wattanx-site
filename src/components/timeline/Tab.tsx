@@ -1,9 +1,16 @@
 import * as Tabs from "@radix-ui/react-tabs";
 
-export const CustomTabs = Tabs.Root;
+const { List, Root, Trigger, Content } =
+  (Tabs as unknown as { default: typeof Tabs }).default || Tabs;
 
-export const TabList = Tabs.List;
+type Props = {
+  children: React.ReactNode;
+};
 
-export const CustomTab = Tabs.Trigger;
+export const CustomTabs = Root;
 
-export const TabPanel = Tabs.Content;
+export const TabList = List;
+
+export const CustomTab = Trigger;
+
+export const TabPanel = Content;

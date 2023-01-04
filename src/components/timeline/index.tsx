@@ -7,7 +7,7 @@ import {
 import { CustomTab, CustomTabs, TabList, TabPanel } from "./Tab";
 import type { Timeline, TimelineOfArticle, TimelineOfWorks } from "./types";
 
-export const TimelineRow: React.FC<{
+const TimelineRow: React.FC<{
   borderVisible?: boolean;
   children?: React.ReactNode;
 }> = ({ borderVisible, children }) => {
