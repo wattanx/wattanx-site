@@ -1,5 +1,5 @@
 import { Octokit, RestEndpointMethodTypes } from "@octokit/rest";
-import { getLanguageColor, LanguageList } from "../../utils/getLanguageColor";
+import { getLanguageColor, LanguageList } from "~/utils/getLanguageColor";
 
 export const client = new Octokit({
   auth: import.meta.env.GITHUB_TOKEN,

@@ -1,4 +1,4 @@
-import { getStringOfMonth } from "../../utils/date";
+import { getStringOfMonth } from "~/utils/date";
 import {
   getFaviconSrcFromHostname,
   getOriginFromURL,

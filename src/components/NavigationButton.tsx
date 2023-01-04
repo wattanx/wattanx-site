@@ -1,4 +1,4 @@
-import { ArrowRight } from "../components/ArrowRight";
+import { ArrowRight } from "~/components/ArrowRight";
 
 export type NavigationButtonProps = {
   href: string;

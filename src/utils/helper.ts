@@ -1,5 +1,5 @@
 import type { PostItem } from "../../builder/posts";
-import posts from "../../.contents/posts.json";
+import posts from "~/.contents/posts.json";
 
 export function getPosts(): PostItem[] {
   return posts as PostItem[];

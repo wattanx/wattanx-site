@@ -1,4 +1,4 @@
-import type { ColorList } from "@utils/getLanguageColor";
+import type { ColorList } from "~/utils/getLanguageColor";
 
 type Props = {
   url: string;

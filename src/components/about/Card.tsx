@@ -1,8 +1,8 @@
-import type posts from "../../../.contents/posts.json";
 import {
   getFaviconSrcFromHostname,
   getOriginFromURL,
-} from "../../utils/helper";
+  getPosts,
+} from "~/utils/helper";
 
 const ArticleCard: React.FC<{
   link: string;
@@ -21,9 +21,9 @@ const ArticleCard: React.FC<{
   </div>
 );
 
-export const ArticleCardBlock: React.FC<{ posts: typeof posts }> = ({
-  posts,
-}) => {
+export const ArticleCardBlock: React.FC<{
+  posts: ReturnType<typeof getPosts>;
+}> = ({ posts }) => {
   return (
     <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
       {posts.map((prop, index) => {

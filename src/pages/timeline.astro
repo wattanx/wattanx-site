@@ -1,14 +1,14 @@
 ---
 import uniqueid from "lodash.uniqueid";
 
-import { SiteHeader } from "../components/SiteHeader";
-import { TimelineBlock, TimelineData } from "../components/timeline";
+import Layout from "~/layouts/Layout.astro";
+import { SiteHeader } from "~/components/SiteHeader";
+import { TimelineBlock, TimelineData } from "~/components/timeline";
 import type {
   TimelineOfArticle,
   TimelineOfWorks,
-} from "../components/timeline/types";
-import posts from "../../.contents/posts.json";
-import Layout from "../layouts/Layout.astro";
+} from "~/components/timeline/types";
+import posts from "~/.contents/posts.json";
 
 const _articles: TimelineOfArticle[] = posts.map((x) => {
   const id = uniqueid();

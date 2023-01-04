@@ -1,11 +1,11 @@
 ---
-import { GitHubCard } from "../components/GitHubCard";
-import { ExternalLinkAlt } from "../components/ExternalLinkAlt";
-import { SiteHeader } from "../components/SiteHeader";
-import { getRepositoryInfo } from "../framework/github/createClient";
-import Layout from "../layouts/Layout.astro";
-import posts from "../../.contents/posts.json";
-import { ArticleCardBlock } from "../components/about/Card";
+import { GitHubCard } from "~/components/GitHubCard";
+import { ExternalLinkAlt } from "~/components/ExternalLinkAlt";
+import { SiteHeader } from "~/components/SiteHeader";
+import { getRepositoryInfo } from "~/framework/github/createClient";
+import Layout from "~/layouts/Layout.astro";
+import posts from "~/.contents/posts.json";
+import { ArticleCardBlock } from "~/components/about/Card";
 
 const repoInfo = await getRepositoryInfo();
 ---
