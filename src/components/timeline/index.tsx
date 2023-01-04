@@ -53,7 +53,7 @@ const ArticleCard: React.FC<TimelineOfArticle> = (props) => {
   return (
     <div className="flex mt-4 flex-col">
       <a
-        className="flex items-center leading-snug z-[2] text-sm bg-[#202225] border-[1px] border-[#131418] rounded-lg p-4"
+        className="flex items-center leading-snug z-[2] text-sm bg-dark-200 border-none rounded-lg p-4"
         href={link}
         target="_blank"
         rel="nofollow noopener"

@@ -9,7 +9,7 @@ const ArticleCard: React.FC<{
   title: string;
   hostname: string;
 }> = ({ link, title, hostname }) => (
-  <div className="flex space-y-4 flex-col justify-between bg-[#202225] border-[1px] border-[#131418] rounded-lg p-4">
+  <div className="flex space-y-4 flex-col justify-between bg-dark-200 border-none rounded-lg p-4">
     <a href={link} target="_blank" rel="nofollow noopener">
       <p className=" font-bold text-xl pb-4 min-h-[95px]">{title}</p>
 
