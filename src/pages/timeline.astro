@@ -1,11 +1,76 @@
 ---
+import uniqueid from "lodash.uniqueid";
+
 import { SiteHeader } from "../components/SiteHeader";
+import { TimelineBlock, TimelineData } from "../components/timeline";
+import type {
+  TimelineOfArticle,
+  TimelineOfWorks,
+} from "../components/timeline/types";
+import posts from "../../.contents/posts.json";
 import Layout from "../layouts/Layout.astro";
+
+const _articles: TimelineOfArticle[] = posts.map((x) => {
+  const id = uniqueid();
+  return {
+    id: id,
+    title: x.title,
+    publishedDate: x.isoDate,
+    link: x.link,
+    year: new Date(x.isoDate).getFullYear(),
+    month: new Date(x.isoDate).getMonth() + 1,
+    day: new Date(x.isoDate).getDate(),
+  };
+});
+
+const _works: TimelineOfWorks[] = [
+  {
+    id: uniqueid(),
+    companyName: "nanoconnect, Inc.",
+    link: "https://www.nanoconnect.co.jp/",
+    joinedDate: "2019-04-01",
+    year: 2019,
+    month: 4,
+    day: 1,
+  },
+  {
+    id: uniqueid(),
+    companyName: "STORES, inc.",
+    link: "https://www.st.inc/",
+    joinedDate: "2022-01-01",
+    year: 2022,
+    month: 1,
+    day: 1,
+  },
+  {
+    id: uniqueid(),
+    companyName: "nanoconnect, Inc.",
+    link: "https://www.nanoconnect.co.jp/",
+    leavedDate: "2021-12-31",
+    year: 2021,
+    month: 12,
+    day: 31,
+  },
+];
+
+const works = [...new Set(_works.map((x) => x.year))];
+const articles = [...new Set(_articles.map((x) => x.year))];
+const years = [...new Set([...works, ...articles])];
+
+let timelineData: TimelineData[] = [];
+
+for (const year of years) {
+  const works = _works.filter((x) => x.year === year);
+  const articles = _articles.filter((x) => x.year === year);
+  timelineData = [...timelineData, { year, data: { works, articles } }];
+}
+
+timelineData = timelineData.sort((a, b) => b.year - a.year);
 ---
 
 <Layout title="wattanx｜Timeline">
   <SiteHeader borderBottomColor="border-b-pink-500" />
-  <main class="my-0 mx-auto max-w-[850px] py-0 px-6">
+  <main class="my-0 mx-auto max-w-[850px] py-0 px-6 min-h-screen">
     <div class="pt-11 pb-8 px-0">
       <h1
         class="font-bold text-4xl underline decoration-pink-500 underline-offset-8"
@@ -13,6 +78,6 @@ import Layout from "../layouts/Layout.astro";
         Timeline
       </h1>
     </div>
-    <div>Comming Soon.</div>
+    <TimelineBlock client:load timelineData={timelineData} />
   </main>
 </Layout>
