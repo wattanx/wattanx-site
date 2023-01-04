@@ -8,7 +8,9 @@ import type {
   TimelineOfArticle,
   TimelineOfWorks,
 } from "~/components/timeline/types";
-import posts from "~/.contents/posts.json";
+import { getPosts } from "~/utils/helper";
+
+const posts = getPosts();
 
 const _articles: TimelineOfArticle[] = posts.map((x) => {
   const id = uniqueid();

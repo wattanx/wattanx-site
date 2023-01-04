@@ -14,7 +14,7 @@ const ArticleCard: React.FC<{
       <p className=" font-bold text-xl pb-4 min-h-[95px]">{title}</p>
 
       <div className="flex flex-row items-center space-x-4">
-        <img src={getFaviconSrcFromHostname(hostname)} />
+        <img height="16" width="16" src={getFaviconSrcFromHostname(hostname)} />
         <p className=" text-sm">{hostname}</p>
       </div>
     </a>

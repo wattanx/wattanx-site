@@ -1,8 +1,9 @@
 import { getStringOfMonth } from "~/utils/date";
 import {
   getFaviconSrcFromHostname,
+  getHostFromURL,
   getOriginFromURL,
-} from "../../utils/helper";
+} from "~/utils/helper";
 import { CustomTab, CustomTabs, TabList, TabPanel } from "./Tab";
 import type { Timeline, TimelineOfArticle, TimelineOfWorks } from "./types";
 
@@ -50,9 +51,9 @@ const ArticleCard: React.FC<TimelineOfArticle> = (props) => {
 
   const hostname = getOriginFromURL(link);
   return (
-    <div className="flex mt-4">
+    <div className="flex mt-4 flex-col">
       <a
-        className="flex leading-snug z-[2] text-sm bg-[#202225] border-[1px] border-[#131418] rounded-lg p-4"
+        className="flex items-center leading-snug z-[2] text-sm bg-[#202225] border-[1px] border-[#131418] rounded-lg p-4"
         href={link}
         target="_blank"
         rel="nofollow noopener"
@@ -74,24 +75,38 @@ const ArticlesTimeline: React.FC<{
   data: TimelineOfArticle[];
   month: number;
 }> = ({ data, month }) => {
-  const newTitle = `Published ${data.length} posts on `;
+  const originList = [...new Set(data.map((x) => getOriginFromURL(x.link)))];
+
+  let articles: { origin: string; contents: TimelineOfArticle[] }[] = [];
+
+  for (const origin of originList) {
+    const contents = data.filter((x) => getOriginFromURL(x.link) === origin);
+    articles = [...articles, { origin, contents }];
+  }
 
   return (
-    <TimelineRow>
-      {newTitle}
-      <a
-        className="hover:underline hover:underline-offset-2"
-        href="https://zenn.dev"
-        target="_blank"
-        rel="nofollow noopener"
-      >
-        zenn.dev
-      </a>{" "}
-      in {getStringOfMonth(month)}
-      {data.map((x) => (
-        <ArticleCard key={x.id} {...x} />
-      ))}
-    </TimelineRow>
+    <>
+      {articles.map((article, index) => {
+        const newTitle = `Published ${article.contents.length} posts on `;
+        return (
+          <TimelineRow key={index}>
+            {newTitle}
+            <a
+              className="hover:underline hover:underline-offset-2"
+              href={article.origin}
+              target="_blank"
+              rel="nofollow noopener"
+            >
+              {getHostFromURL(article.origin)}
+            </a>{" "}
+            in {getStringOfMonth(month)}
+            {article.contents.map((x) => (
+              <ArticleCard key={x.id} {...x} />
+            ))}
+          </TimelineRow>
+        );
+      })}
+    </>
   );
 };
 
