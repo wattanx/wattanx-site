@@ -4,13 +4,15 @@ import { ExternalLinkAlt } from "../components/ExternalLinkAlt";
 import { SiteHeader } from "../components/SiteHeader";
 import { getRepositoryInfo } from "../framework/github/createClient";
 import Layout from "../layouts/Layout.astro";
+import posts from "../../.contents/posts.json";
+import { ArticleCardBlock } from "../components/about/Card";
 
 const repoInfo = await getRepositoryInfo();
 ---
 
 <Layout title="wattanx｜About">
   <SiteHeader borderBottomColor="border-b-blue-500" />
-  <main class="my-0 mx-auto max-w-[850px] py-0 px-6">
+  <main class="my-0 mx-auto max-w-[850px] py-0 px-6 min-h-screen">
     <div class="pt-11 pb-8 px-0">
       <h1
         class="font-bold text-4xl underline decoration-blue-500 underline-offset-8"
@@ -32,10 +34,12 @@ const repoInfo = await getRepositoryInfo();
           <ExternalLinkAlt />
         </a>
       </div>
-      <h2 class="text-lg">Top Repositories</h2>
+      <h2 class="text-2xl">Top Repositories</h2>
       <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
         {repoInfo.map((x) => <GitHubCard {...x} />)}
       </div>
+      <h2 class="text-2xl">Articles</h2>
+      <ArticleCardBlock posts={posts} />
     </div>
   </main>
 </Layout>
