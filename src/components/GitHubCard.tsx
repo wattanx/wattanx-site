@@ -45,7 +45,7 @@ export const GitHubCard: React.FC<Props> = ({
   language,
 }) => {
   return (
-    <div className="flex space-y-4 flex-col justify-between bg-dark-200 border-none  rounded-lg p-4">
+    <div className="flex space-y-4 flex-col justify-between bg-gray-800 border-none  rounded-lg p-4">
       <div className="flex space-y-4 flex-col">
         <div className="flex space-x-4 flex-row items-center">
           <MarkGithub />

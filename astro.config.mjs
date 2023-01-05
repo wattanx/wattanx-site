@@ -1,16 +1,25 @@
 import { defineConfig } from "astro/config";
-
-// https://astro.build/config
 import react from "@astrojs/react";
-
-// https://astro.build/config
 import tailwind from "@astrojs/tailwind";
-
-// https://astro.build/config
 import image from "@astrojs/image";
+import mdx from "@astrojs/mdx";
+import remarkToc from "remark-toc";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://wattanx.dev",
-  integrations: [react(), tailwind(), image()],
+  integrations: [
+    react(),
+    tailwind(),
+    image({
+      serviceEntryPoint: "@astrojs/image/sharp",
+    }),
+    mdx(),
+  ],
+  markdown: {
+    remarkPlugins: [remarkToc],
+    shikiConfig: {
+      theme: "slack-dark",
+    },
+  },
 });

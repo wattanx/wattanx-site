@@ -1,0 +1,12 @@
+---
+export type Props = {
+  title: string;
+  date: string;
+};
+const { title, date } = Astro.props;
+---
+
+<article>
+  <h1>{title}</h1>
+  <div>{date}</div>
+</article>

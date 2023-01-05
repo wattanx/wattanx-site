@@ -1,0 +1,23 @@
+---
+type Props = {
+  frontmatter: BlogFrontmatter;
+  url: string;
+};
+
+const { frontmatter, url } = Astro.props;
+const title = frontmatter.title;
+const description = frontmatter.description;
+const date = frontmatter.date;
+---
+
+<div
+  class="flex space-y-8 flex-col justify-between bg-gray-800 border-none rounded-lg p-4"
+>
+  <div class="space-y-2">
+    <a href={url} class="hover:underline font-bold text-xl">
+      {title}
+    </a>
+    <p class="text-md">{description}</p>
+  </div>
+  <p>{date}</p>
+</div>

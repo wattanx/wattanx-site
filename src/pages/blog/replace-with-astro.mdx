@@ -1,0 +1,46 @@
+---
+layout: "../../layouts/BlogLayout.astro"
+title: "自分のサイトを Next.js から Astro に移行した"
+description: "年末から年始にかけて Next.js で作成した自分のサイトを Astro に移行した話"
+date: "2023-1-5"
+---
+
+## はじめに
+
+年末から年始にかけて Next.js で作成した自分のサイトを Astro に移行した。
+
+## つまずいたところ
+
+`@radix-ui/react-tabs`を使用した状態でビルドした場合、下記のようなエラーが表示されてビルドできませんでした。
+
+(`yarn dev`は問題ない)
+
+```tsx
+import * as Tabs from "@radix-ui/react-tabs";
+
+export const CustomTabs = Root;
+
+export const TabList = List;
+
+export const CustomTab = Trigger;
+
+export const TabPanel = Content;
+```
+
+### 対処法
+
+```tsx
+import * as Tabs from "@radix-ui/react-tabs";
+
+// これを入れる
+const { List, Root, Trigger, Content } =
+  (Tabs as unknown as { default: typeof Tabs }).default || Tabs;
+
+export const CustomTabs = Root;
+
+export const TabList = List;
+
+export const CustomTab = Trigger;
+
+export const TabPanel = Content;
+```

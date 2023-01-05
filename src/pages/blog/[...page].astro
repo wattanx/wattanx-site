@@ -1,0 +1,31 @@
+---
+import type { GetStaticPathsOptions, MarkdownInstance, Page } from "astro";
+import Card from "~/components/blog/Card.astro";
+import { SiteHeader } from "~/components/SiteHeader";
+import Layout from "~/layouts/Layout.astro";
+
+export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
+  const posts = await Astro.glob("./*.mdx");
+  return paginate(posts, { pageSize: 20 });
+}
+
+const { page } = Astro.props as {
+  page: Page<MarkdownInstance<BlogFrontmatter>[][number]>;
+};
+---
+
+<Layout title="Blog｜wattanx">
+  <SiteHeader borderBottomColor="border-b-yellow-500" />
+  <main class="my-0 mx-auto max-w-[850px] py-0 px-6 min-h-screen">
+    <div class="pt-11 pb-8 px-0">
+      <h1
+        class="font-bold text-4xl underline decoration-yellow-500 underline-offset-8"
+      >
+        Blog
+      </h1>
+    </div>
+    <div class="grid grid-cols-1 gap-4">
+      {page.data.map((x) => <Card frontmatter={x.frontmatter} url={x.url!} />)}
+    </div>
+  </main>
+</Layout>

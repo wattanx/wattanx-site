@@ -15,7 +15,7 @@ export const NavigationButton: React.FC<NavigationButtonProps> = ({
   return (
     <a className="hover:underline text-white" href={href}>
       <div
-        className={`flex justify-center items-center cursor-pointer rounded-[92px] p-4 bg-gray-500 ${border}`}
+        className={`flex justify-center items-center cursor-pointer rounded-[92px] p-4 ${border}`}
       >
         <div className="flex justify-between flex-row w-[172px] items-center">
           <h2 className="font-bold  text-xl text-white">{text}</h2>

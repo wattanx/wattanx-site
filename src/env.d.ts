@@ -7,3 +7,11 @@ interface ImportMetaEnv {
 interface ImportMeta {
   readonly env: ImportMetaEnv;
 }
+
+type BlogFrontmatter = {
+  date: string;
+  title: string;
+  description: string;
+  image: string;
+  tags: string;
+};

@@ -17,7 +17,7 @@ const TimelineRow: React.FC<{
 
   return (
     <div className={`relative pl-7 ${before} last:mt-11`}>
-      <div className="bg-[#55555b] flex justify-center items-center top-[2px] left-[-9px] absolute border-4 border-[#131418] w-4 h-4 rounded-full" />
+      <div className="bg-[#55555b] flex justify-center items-center top-[2px] left-[-9px] absolute border-4 border-gray-900 w-4 h-4 rounded-full" />
       <div className=" text-base whitespace-pre-wrap [word-spacing:0.1em]">
         {children}
       </div>
@@ -53,7 +53,7 @@ const ArticleCard: React.FC<TimelineOfArticle> = (props) => {
   return (
     <div className="flex mt-4 flex-col">
       <a
-        className="flex items-center leading-snug z-[2] text-sm bg-dark-200 border-none rounded-lg p-4"
+        className="flex items-center leading-snug z-[2] text-sm bg-gray-800 border-none rounded-lg p-4"
         href={link}
         target="_blank"
         rel="nofollow noopener"
@@ -155,7 +155,7 @@ export const TimelineViewRow: React.FC<{ data: Timeline }> = ({ data }) => {
   }
 
   timelineData = timelineData.sort((a, b) => b.month - a.month);
-  const before = `before:content[''] before:absolute before:left-[-2px] before:top-[10px] before:bottom-[0] before:w-[2px] before:bg-[#202225]`;
+  const before = `before:content[''] before:absolute before:left-[-2px] before:top-[10px] before:bottom-[0] before:w-[2px] before:bg-gray-800`;
   return (
     <div className={`mt-6 ml-4 relative ${before}`}>
       {timelineData.map((x) => (

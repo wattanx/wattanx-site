@@ -3,7 +3,7 @@ export const SiteHeader: React.FC<{ borderBottomColor?: string }> = ({
 }) => {
   const border = `border-[1px] border-t-0 border-x-0 ${borderBottomColor}`;
   return (
-    <header className={`bg-dark-500 sticky py-4 px-0 top-0 z-[99] ${border}`}>
+    <header className={`bg-gray-900 sticky py-4 px-0 top-0 z-[99] ${border}`}>
       <div className="my-0 mx-auto max-w-[850px] py-0 px-6">
         <div className="flex flex-row items-center font-bold justify-between">
           <div>
