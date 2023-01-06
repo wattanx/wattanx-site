@@ -5,12 +5,14 @@ export interface Props {
   title: string;
   description?: string;
   image?: string;
+  noindex?: boolean;
 }
 
 const {
   title,
   description = "Personal website of wattanx.",
   image,
+  noindex,
 } = Astro.props;
 
 const ogImage = new URL(image ?? "/images/cat.png", Astro.site?.origin!).href;
@@ -26,6 +28,7 @@ const url = new URL(Astro.url.pathname, Astro.site);
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
+    {noindex && <meta name="robots" content="noindex" />}
 
     <meta property="og:title" content={title} />
     <meta property="og:type" content="article" />
@@ -38,11 +41,11 @@ const url = new URL(Astro.url.pathname, Astro.site);
     <meta property="twitter:creator" content="@pontaxx" />
 
     <link rel="canonical" href={url} />
-    <link rel="icon" type="image/png" href="/images/wattanx-logo.png" />
+    <link rel="icon" type="image/png" href="/images/cat_dot.png" />
     <link
       rel="apple-touch-icon-precomposed"
       type="image/png"
-      href="/images/wattanx-logo.png"
+      href="/images/cat_dot.png"
     />
   </head>
   <body>
