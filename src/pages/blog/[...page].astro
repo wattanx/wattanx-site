@@ -2,7 +2,7 @@
 import type { GetStaticPathsOptions, MarkdownInstance, Page } from "astro";
 import { generateOgp } from "scripts/ogp-generator";
 import Card from "~/components/blog/Card.astro";
-import { SiteHeader } from "~/components/SiteHeader";
+import SiteHeader from "~/components/shared/SiteHeader.astro";
 import Layout from "~/layouts/Layout.astro";
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
