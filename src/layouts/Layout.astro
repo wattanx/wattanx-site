@@ -1,5 +1,4 @@
 ---
-import { SEO } from "astro-seo";
 import Footer from "~/components/Footer.astro";
 import GA from "~/components/GA.astro";
 export interface Props {
@@ -15,42 +14,36 @@ const {
 } = Astro.props;
 
 const ogImage = new URL(image ?? "/images/cat.png", Astro.site?.origin!).href;
+const url = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <SEO
-      title={title}
-      description={description}
-      charset="UTF-8"
-      openGraph={{
-        basic: {
-          type: "article",
-          title,
-          image: ogImage,
-        },
-        optional: {
-          description,
-          siteName: "wattanx",
-        },
-        image: {
-          alt: "wattanx cat",
-        },
-      }}
-      twitter={{
-        card: "summary_large_image",
-      }}
-    />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={url} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content="wattanx" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:creator" content="@pontaxx" />
+
+    <link rel="canonical" href={url} />
     <link rel="icon" type="image/png" href="/images/wattanx-logo.png" />
     <link
       rel="apple-touch-icon-precomposed"
       type="image/png"
       href="/images/wattanx-logo.png"
     />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
   </head>
   <body>
     <slot />

@@ -1145,11 +1145,6 @@ astring@^1.8.0:
   resolved "https://registry.yarnpkg.com/astring/-/astring-1.8.4.tgz#6d4c5d8de7be2ead9e4a3cc0e2efb8d759378904"
   integrity sha512-97a+l2LBU3Op3bBQEff79i/E4jMD2ZLFD8rHx9B6mXyB2uQwhJQYfiDqUwtfjF4QA1F2qs//N6Cw8LetMbQjcw==
 
-astro-seo@^0.6.1:
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/astro-seo/-/astro-seo-0.6.1.tgz#d3225a7ea6d8d1af4a4cbee41aa992a1fae9c96f"
-  integrity sha512-eszmxiycjfLcmoRyB8x5lCrWAwcSHs1i5riR1a5JbyJI8OQAl9tn1JvWFRuZvNH483CFdfNCczirnc805t/soA==
-
 astro@^1.9.0:
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/astro/-/astro-1.9.0.tgz#e1a10357c1832ae5b6175a53e401259baf0bbd3a"
