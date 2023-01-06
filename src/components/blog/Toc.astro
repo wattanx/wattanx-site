@@ -1,0 +1,27 @@
+---
+import type { MarkdownHeading } from "astro";
+
+export type Props = {
+  headings: MarkdownHeading[];
+};
+
+const { headings } = Astro.props;
+---
+
+<aside
+  class="top-[113px] flex-shrink-0 w-48 hidden lg:block bg-gray-800 p-4 rounded-lg sticky h-fit"
+>
+  <nav aria-labelledby="toc-title">
+    <ul>
+      {
+        headings.map((heading) => (
+          <li class={`ml-${heading.depth === 3 ? "4" : "0"}`}>
+            <a class="hover:underline" href={`#${heading.slug}`}>
+              {heading.text}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</aside>

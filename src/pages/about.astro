@@ -4,14 +4,15 @@ import { ExternalLinkAlt } from "~/components/ExternalLinkAlt";
 import { SiteHeader } from "~/components/SiteHeader";
 import { getRepositoryInfo } from "~/framework/github/createClient";
 import Layout from "~/layouts/Layout.astro";
-import posts from "~/.contents/posts.json";
 import { ArticleCardBlock } from "~/components/about/Card";
+import { getPosts } from "~/utils/helper";
 
 const repoInfo = await getRepositoryInfo();
+const posts = getPosts();
 ---
 
 <Layout title="About｜wattanx">
-  <SiteHeader borderBottomColor="border-b-blue-500" />
+  <SiteHeader />
   <main class="my-0 mx-auto max-w-[850px] py-0 px-6 min-h-screen">
     <div class="pt-11 pb-8 px-0">
       <h1

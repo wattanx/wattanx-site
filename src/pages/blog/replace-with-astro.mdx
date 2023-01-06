@@ -7,25 +7,35 @@ date: "2023-1-5"
 
 ## はじめに
 
-年末から年始にかけて Next.js で作成した自分のサイトを Astro に移行した。
+年末から年始にかけて Next.js で作成した自分のサイトを Astro に移行しました。
+
+以前は Next.js, Chakra UI を使用して作成していましたが、できるかぎり JS を減らしたサイトを作りたいと思って Astro に移行しました。
 
 ## つまずいたところ
+
+[Timeline](https://wattanx.dev/timeline) を作成するにあたって、Tab の Component を作成する必要があったのですが、実装するのが手間なので [Radix UI](https://www.radix-ui.com/) を使いました。(後でやめる予定)
 
 `@radix-ui/react-tabs`を使用した状態でビルドした場合、下記のようなエラーが表示されてビルドできませんでした。
 
 (`yarn dev`は問題ない)
 
+```
+Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined.
+```
+
 ```tsx
 import * as Tabs from "@radix-ui/react-tabs";
 
-export const CustomTabs = Root;
+export const CustomTabs = Tabs.Root;
 
-export const TabList = List;
+export const TabList = Tabs.List;
 
-export const CustomTab = Trigger;
+export const CustomTab = Tabs.Trigger;
 
-export const TabPanel = Content;
+export const TabPanel = Tabs.Content;
 ```
+
+[それらしい Issue](https://github.com/withastro/astro/issues/3174) を見たが原因がわからず、[Issue 内に書いてあった対処法](https://github.com/withastro/docs/blob/3868e68c32ad844fb2e95465bbf5b183bc2f0229/src/components/Header/Search.tsx#L10) でひとまずビルドが通るようになりました。
 
 ### 対処法
 
