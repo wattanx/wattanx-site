@@ -1,0 +1,2 @@
+user-agent: *
+Sitemap: https://wattanx.dev/sitemap-index.xml

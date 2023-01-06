@@ -7,6 +7,9 @@ import remarkToc from "remark-toc";
 import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
+import sitemap from "@astrojs/sitemap";
+
+// https://astro.build/config
 export default defineConfig({
   site: "https://wattanx.dev",
   integrations: [
@@ -21,6 +24,7 @@ export default defineConfig({
         forward: ["dataLayer.push"],
       },
     }),
+    sitemap(),
   ],
   markdown: {
     remarkPlugins: [remarkToc],
