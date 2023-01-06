@@ -13,7 +13,8 @@ export const generateOgp = async (
 
 const generateOgpImage = async (title: string) => {
   // フォントデータを読み込む
-  const font = fs.readFileSync("public/fonts/NotoSansJP-Regular.otf");
+  const regular = fs.readFileSync("public/fonts/NotoSansJP-Regular.otf");
+  const medium = fs.readFileSync("public/fonts/NotoSansJP-Medium.otf");
   // JSX から画像を生成する
   const svg = await satori(
     <div
@@ -21,25 +22,37 @@ const generateOgpImage = async (title: string) => {
         height: "100%",
         width: "100%",
         display: "flex",
-        flexDirection: "column",
-        backgroundColor: "#282b2f",
+        backgroundImage: "linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%)",
         color: "#fff",
-        justifyContent: "space-between",
         fontSize: 48,
         fontWeight: 600,
-        padding: "1rem 2rem",
+        justifyContent: "center",
+        alignItems: "center",
+        padding: "0 2rem",
       }}
     >
-      <p style={{ fontSize: 64 }}>{title}</p>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          padding: "1rem 4rem",
+          backgroundColor: "#282b2f",
+          justifyContent: "space-between",
+          borderRadius: "1rem",
+          height: "90%",
+        }}
+      >
+        <p style={{ fontSize: 64, fontWeight: 700 }}>{title}</p>
 
-      <div style={{ display: "flex", alignItems: "center" }}>
-        <img
-          src="https://avatars.githubusercontent.com/wattanx"
-          width={48}
-          height={48}
-          style={{ borderRadius: "100%" }}
-        />
-        <p style={{ marginLeft: "16px" }}>wattanx</p>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <img
+            src="https://avatars.githubusercontent.com/wattanx"
+            width={80}
+            height={80}
+            style={{ borderRadius: "100%" }}
+          />
+          <p style={{ marginLeft: "16px", fontWeight: 400 }}>wattanx</p>
+        </div>
       </div>
     </div>,
     {
@@ -48,8 +61,15 @@ const generateOgpImage = async (title: string) => {
       fonts: [
         {
           name: "Noto Sans JP",
-          data: font,
+          data: regular,
           style: "normal",
+          weight: 400,
+        },
+        {
+          name: "Noto Sans JP",
+          data: medium,
+          style: "normal",
+          weight: 600,
         },
       ],
     }
