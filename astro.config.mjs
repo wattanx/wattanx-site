@@ -4,6 +4,7 @@ import tailwind from "@astrojs/tailwind";
 import image from "@astrojs/image";
 import mdx from "@astrojs/mdx";
 import remarkToc from "remark-toc";
+import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
 export default defineConfig({
@@ -15,6 +16,11 @@ export default defineConfig({
       serviceEntryPoint: "@astrojs/image/sharp",
     }),
     mdx(),
+    partytown({
+      config: {
+        forward: ["dataLayer.push"],
+      },
+    }),
   ],
   markdown: {
     remarkPlugins: [remarkToc],
