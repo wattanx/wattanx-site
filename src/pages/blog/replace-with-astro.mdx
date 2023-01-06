@@ -11,6 +11,20 @@ date: "2023-1-5"
 
 以前は Next.js, Chakra UI を使用して作成していましたが、できるかぎり JS を減らしたサイトを作りたいと思って Astro に移行しました。
 
+あとついでに Blog も作りました。
+
+## 技術スタック
+
+- Astro
+- Tailwind
+- Radix UI(あとで消すけどちょっとだけ)
+- Partytown
+- mdx
+
+## Astro めっちゃ楽
+
+Partytown や sitemap の設定を`integrations`に書くだけなので、めっちゃ楽で快適でした。
+
 ## つまずいたところ
 
 [Timeline](https://wattanx.dev/timeline) を作成するにあたって、Tab の Component を作成する必要があったのですが、実装するのが手間なので [Radix UI](https://www.radix-ui.com/) を使いました。(後でやめる予定)
@@ -54,3 +68,8 @@ export const CustomTab = Trigger;
 
 export const TabPanel = Content;
 ```
+
+## 最後に
+
+今まで技術系の記事は Zenn に書いていたのでどう書き分ければいいか迷います。
+できれば、継続的に発信していきたい。

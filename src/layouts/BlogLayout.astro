@@ -67,6 +67,13 @@ const date = formatDate(new Date(frontmatter.date));
     @apply text-base;
   }
 
+  .contents ul {
+    @apply list-disc pl-4 my-2;
+  }
+  .contents li > ul {
+    @apply my-0;
+  }
+
   .contents p {
     @apply my-4;
   }
@@ -76,7 +83,7 @@ const date = formatDate(new Date(frontmatter.date));
   }
 
   .contents strong {
-    @apply font-semibold;
+    @apply font-bold;
   }
   .contents blockquote {
     @apply px-4 border border-gray-900 border-l-blue-300 border-l-2;
