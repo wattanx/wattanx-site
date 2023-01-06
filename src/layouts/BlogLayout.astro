@@ -16,7 +16,7 @@ const { title, url, description, image, tags } = frontmatter;
 const date = formatDate(new Date(frontmatter.date));
 ---
 
-<Layout title={title} image={image}>
+<Layout title={title} image={image} description={description}>
   <SiteHeader />
   <main
     class="flex gap-4 px-6 py-14 container mx-auto min-h-screen justify-center"

@@ -3,6 +3,7 @@ layout: "../../layouts/BlogLayout.astro"
 title: "自分のサイトを Next.js から Astro に移行した"
 description: "年末から年始にかけて Next.js で作成した自分のサイトを Astro に移行した話"
 date: "2023-1-5"
+image: "../../../public/images/blog/replace-with-astro.png"
 ---
 
 ## はじめに
@@ -25,6 +26,11 @@ date: "2023-1-5"
 
 Partytown や sitemap の設定を`integrations`に書くだけなので、めっちゃ楽で快適でした。
 
+## OG Image
+
+OG Image の生成には [satori](https://github.com/vercel/satori) を使用しました。
+とりあえずビルド時に OG Image が動的に出力できるようにしています。(svg から png に変換するために `sharp`を使っています。)
+
 ## つまずいたところ
 
 [Timeline](https://wattanx.dev/timeline) を作成するにあたって、Tab の Component を作成する必要があったのですが、実装するのが手間なので [Radix UI](https://www.radix-ui.com/) を使いました。(後でやめる予定)
@@ -36,6 +42,8 @@ Partytown や sitemap の設定を`integrations`に書くだけなので、め�
 ```
 Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined.
 ```
+
+原因のソースコードは下記のような形で`@radix-ui/react-tabs`を import しているところにありました。
 
 ```tsx
 import * as Tabs from "@radix-ui/react-tabs";
@@ -72,4 +80,5 @@ export const TabPanel = Content;
 ## 最後に
 
 今まで技術系の記事は Zenn に書いていたのでどう書き分ければいいか迷います。
+
 できれば、継続的に発信していきたい。
