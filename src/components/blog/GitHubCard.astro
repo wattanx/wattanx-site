@@ -17,15 +17,16 @@ type Props = {
 const { url, title, description, stargazers_count, language } = Astro.props;
 ---
 
-<div
-  class="flex space-y-4 flex-col justify-between bg-gray-800 border-none rounded-lg p-4"
+<a
+  href={url}
+  target="_blank"
+  rel="nofollow noopener"
+  class="flex space-y-4 flex-col justify-between bg-gray-800 hover:bg-gray-700 border-none rounded-lg p-4"
 >
   <div class="flex space-y-4 flex-col">
     <div class="flex space-x-4 flex-row items-center">
       <MarkGithub />
-      <a href={url} target="_blank" rel="nofollow noopener">
-        <p class="text-lg font-bold">{title}</p>
-      </a>
+      <p class="text-lg font-bold">{title}</p>
     </div>
     <p class="text-md">{description}</p>
   </div>
@@ -50,4 +51,4 @@ const { url, title, description, stargazers_count, language } = Astro.props;
       <p class="text-sm">{language.name}</p>
     </div>
   </div>
-</div>
+</a>

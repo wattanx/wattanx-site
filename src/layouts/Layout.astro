@@ -70,6 +70,10 @@ const url = new URL(Astro.url.pathname, Astro.site);
         font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
           DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
       }
+      :focus-visible {
+        box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.6);
+        outline: 2px solid transparent;
+      }
     </style>
     {import.meta.env.PROD && <GA />}
   </body>

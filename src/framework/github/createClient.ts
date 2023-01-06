@@ -36,7 +36,7 @@ export const getRepositoryInfo = async (): Promise<
   const repoInfo = repo.map((x) => {
     return {
       title: x.full_name,
-      url: x.url,
+      url: x.html_url,
       description: x.description,
       stargazers_count: x.stargazers_count,
       language: {

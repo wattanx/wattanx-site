@@ -10,15 +10,16 @@ type Props = {
 const { link, title, hostname } = Astro.props;
 ---
 
-<div
-  class="flex space-y-4 flex-col justify-between bg-gray-800 border-none rounded-lg p-4"
+<a
+  href={link}
+  target="_blank"
+  rel="nofollow noopener"
+  class="flex space-y-4 flex-col justify-between bg-gray-800 hover:bg-gray-700 border-none rounded-lg p-4"
 >
-  <a href={link} target="_blank" rel="nofollow noopener">
-    <p class="font-bold text-xl pb-4 min-h-[95px]">{title}</p>
+  <p class="font-bold text-xl pb-4 min-h-[95px]">{title}</p>
 
-    <div class="flex flex-row items-center space-x-4">
-      <img height="16" width="16" src={getFaviconSrcFromHostname(hostname)} />
-      <p class="text-sm">{hostname}</p>
-    </div>
-  </a>
-</div>
+  <div class="flex flex-row items-center space-x-4">
+    <img height="16" width="16" src={getFaviconSrcFromHostname(hostname)} />
+    <p class="text-sm">{hostname}</p>
+  </div>
+</a>
