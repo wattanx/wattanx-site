@@ -18,13 +18,15 @@ image: "/images/blog/replace-with-astro.png"
 
 - Astro
 - Tailwind
-- Radix UI(あとで消すけどちょっとだけ)
+- Radix UI
 - Partytown
 - mdx
 
 ## Astro めっちゃ楽
 
 Partytown や sitemap の設定を`integrations`に書くだけなので、めっちゃ楽で快適でした。
+
+元々 tsx で書いていたコンポーネントをそのまま使えるので移行も簡単でした。(ハイドレーションするかどうかコンポーネント単位で選べるのが良い)
 
 ## OG Image
 
@@ -122,7 +124,7 @@ const generateOgpImage = async (title: string) => {
 
 ## つまずいたところ
 
-[Timeline](https://wattanx.dev/timeline) を作成するにあたって、Tab の Component を作成する必要があったのですが、実装するのが手間なので [Radix UI](https://www.radix-ui.com/) を使いました。(後でやめる予定)
+[Timeline](https://wattanx.dev/timeline) を作成するにあたって、Tab の Component を作成する必要があったのですが、実装するのが手間なので [Radix UI](https://www.radix-ui.com/) を使いました。
 
 `@radix-ui/react-tabs`を使用した状態でビルドした場合、下記のようなエラーが表示されてビルドできませんでした。
 
@@ -137,11 +139,11 @@ Element type is invalid: expected a string (for built-in components) or a class/
 ```tsx
 import * as Tabs from "@radix-ui/react-tabs";
 
-export const CustomTabs = Tabs.Root;
+export const TabsRoot = Tabs.Root;
 
 export const TabList = Tabs.List;
 
-export const CustomTab = Tabs.Trigger;
+export const TabTrigger = Tabs.Trigger;
 
 export const TabPanel = Tabs.Content;
 ```
@@ -157,11 +159,11 @@ import * as Tabs from "@radix-ui/react-tabs";
 const { List, Root, Trigger, Content } =
   (Tabs as unknown as { default: typeof Tabs }).default || Tabs;
 
-export const CustomTabs = Root;
+export const TabsRoot = Root;
 
 export const TabList = List;
 
-export const CustomTab = Trigger;
+export const TabTrigger = Trigger;
 
 export const TabPanel = Content;
 ```
