@@ -1,16 +1,18 @@
 ---
-import type { GetStaticPathsOptions, MarkdownInstance, Page } from "astro";
+import { CollectionEntry } from "astro:content";
+import type { GetStaticPathsOptions, Page } from "astro";
 import { generateOgp } from "scripts/ogp-generator";
 import Card from "~/components/blog/Card.astro";
 import SiteHeader from "~/components/shared/SiteHeader.astro";
 import Layout from "~/layouts/Layout.astro";
+import { getBlogs } from "~/utils/blog";
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
-  const posts = await Astro.glob("./*.mdx");
+  const posts = await getBlogs();
   if (import.meta.env.PROD) {
     const options = posts.map((x) => ({
-      title: x.frontmatter.title,
-      url: x.url ?? "",
+      title: x.data.title,
+      url: `blog/${x.slug}` ?? "",
     }));
     await generateOgp(options);
   }
@@ -18,7 +20,7 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
 }
 
 const { page } = Astro.props as {
-  page: Page<MarkdownInstance<BlogFrontmatter>[][number]>;
+  page: Page<CollectionEntry<"blog">>;
 };
 ---
 
@@ -33,7 +35,18 @@ const { page } = Astro.props as {
       </h1>
     </div>
     <div class="grid grid-cols-1 gap-4">
-      {page.data.map((x) => <Card frontmatter={x.frontmatter} url={x.url!} />)}
+      {
+        page.data.map(({ data, slug }) => (
+          <Card
+            frontmatter={{
+              title: data.title,
+              description: data.description,
+              date: data.date,
+            }}
+            url={`/blog/${slug}`}
+          />
+        ))
+      }
     </div>
   </main>
 </Layout>
