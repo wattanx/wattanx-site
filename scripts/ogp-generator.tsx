@@ -7,7 +7,7 @@ export const generateOgp = async (
 ) => {
   for (const option of options) {
     const png = await generateOgpImage(option.title);
-    fs.writeFileSync(`public/images${option.url}.png`, png);
+    fs.writeFileSync(`public/images/${option.url}.png`, png);
   }
 };
 
