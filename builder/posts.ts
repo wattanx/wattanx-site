@@ -1,6 +1,15 @@
 import Parser from "rss-parser";
 import fs from "fs-extra";
-import { articles, Article } from "../articles";
+
+type Article = {
+  sources?: string[];
+};
+
+const articles: Article[] = [
+  {
+    sources: ["https://zenn.dev/wattanx/feed"],
+  },
+];
 
 type FeedItem = {
   title: string;
