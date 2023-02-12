@@ -48,6 +48,9 @@ module.exports = {
         800: "#282b2f",
         900: "#1b1b1b",
       },
+      orange: {
+        500: "#FDBA74",
+      },
       white: "#FFFFFF",
     },
     fontFamily: {
