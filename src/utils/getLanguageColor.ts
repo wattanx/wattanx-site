@@ -23,6 +23,10 @@ export const githubColorsData = {
     color: "#41b883",
     url: "https://github.com/trending?l=Vue",
   },
+  Astro: {
+    color: "#ff5a03",
+    url: "https://github.com/trending?l=Astro",
+  },
 } as const;
 
 export type LanguageList = keyof typeof githubColorsData;
@@ -30,5 +34,9 @@ export type LanguageList = keyof typeof githubColorsData;
 export type ColorList = typeof githubColorsData[LanguageList]["color"];
 
 export const getLanguageColor = (languageName: LanguageList) => {
-  return githubColorsData[languageName].color;
+  try {
+    return githubColorsData[languageName].color;
+  } catch (e: unknown) {
+    throw new Error(`${languageName} color is nothing.`);
+  }
 };
