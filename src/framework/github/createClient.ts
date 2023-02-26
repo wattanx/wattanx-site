@@ -1,16 +1,22 @@
 import { Octokit, RestEndpointMethodTypes } from "@octokit/rest";
-import { getLanguageColor, LanguageList } from "~/utils/getLanguageColor";
+import {
+  ColorList,
+  getLanguageColor,
+  LanguageList,
+} from "~/utils/getLanguageColor";
 
 export const client = new Octokit({
   auth: import.meta.env.GITHUB_TOKEN,
 });
 
 export const getRepositories = async () => {
-  const { data } = (await client.request(
-    "GET /users/wattanx/repos"
-  )) as RestEndpointMethodTypes["repos"]["listPublic"]["response"];
+  const { data } = (await client.request("GET /users/wattanx/repos", {
+    per_page: 30,
+    sort: "updated",
+  })) as RestEndpointMethodTypes["repos"]["listPublic"]["response"];
+
   return data
-    .filter((x) => x.stargazers_count && x.stargazers_count > 0)
+    .filter((x) => x.stargazers_count && x.stargazers_count > 0 && !x.archived)
     .sort((a, b) => b.stargazers_count! - a.stargazers_count!);
 };
 
@@ -22,13 +28,7 @@ export const getRepositoryInfo = async (): Promise<
     stargazers_count: number | undefined;
     language: {
       name: string | null | undefined;
-      colorCode:
-        | "#3178c6"
-        | "#f1e05a"
-        | "#563d7c"
-        | "#c6538c"
-        | "#178600"
-        | "#41b883";
+      colorCode: ColorList;
     };
   }[]
 > => {
