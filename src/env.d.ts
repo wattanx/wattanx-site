@@ -3,6 +3,9 @@
 interface ImportMetaEnv {
   readonly FORMURL: string;
   readonly GITHUB_TOKEN: string;
+  readonly MICROCMS_APIKEY: string;
+  readonly MICROCMS_SERVICEID: string;
+  readonly CONTENT_ID: string;
 }
 
 interface ImportMeta {
