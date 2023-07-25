@@ -36,4 +36,7 @@ export default defineConfig({
       theme: "slack-dark",
     },
   },
+  experimental: {
+    viewTransitions: true
+  }
 });
