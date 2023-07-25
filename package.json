@@ -46,5 +46,6 @@
     "lodash.uniqueid": "^4.0.1",
     "rss-parser": "^3.12.0",
     "tsx": "^3.12.1"
-  }
+  },
+  "packageManager": "pnpm@8.6.10"
 }
