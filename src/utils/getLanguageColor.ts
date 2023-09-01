@@ -31,7 +31,7 @@ export const githubColorsData = {
 
 export type LanguageList = keyof typeof githubColorsData;
 
-export type ColorList = typeof githubColorsData[LanguageList]["color"];
+export type ColorList = (typeof githubColorsData)[LanguageList]["color"];
 
 export const getLanguageColor = (languageName: LanguageList) => {
   try {
