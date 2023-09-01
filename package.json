@@ -9,7 +9,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "build:posts": "tsx --tsconfig tsconfig.builder.json ./builder/posts.ts"
+    "build:posts": "tsx --tsconfig tsconfig.builder.json ./builder/posts.ts",
+    "lint:fix": "prettier --write . --plugin=prettier-plugin-astro"
   },
   "dependencies": {
     "@astrojs/image": "^0.17.2",

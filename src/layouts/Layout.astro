@@ -19,7 +19,7 @@ const ogImage = new URL(image ?? "/images/cat.png", Astro.site?.origin!).href;
 const url = new URL(Astro.url.pathname, Astro.site);
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -67,8 +67,15 @@ const url = new URL(Astro.url.pathname, Astro.site);
         color: white;
       }
       code {
-        font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-          DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+        font-family:
+          Menlo,
+          Monaco,
+          Lucida Console,
+          Liberation Mono,
+          DejaVu Sans Mono,
+          Bitstream Vera Sans Mono,
+          Courier New,
+          monospace;
       }
       :focus-visible {
         box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.6);

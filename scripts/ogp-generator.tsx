@@ -3,7 +3,7 @@ import sharp from "sharp";
 import fs from "fs";
 
 export const generateOgp = async (
-  options: { title: string; url: string }[]
+  options: { title: string; url: string }[],
 ) => {
   for (const option of options) {
     const png = await generateOgpImage(option.title);
@@ -72,7 +72,7 @@ const generateOgpImage = async (title: string) => {
           weight: 600,
         },
       ],
-    }
+    },
   );
 
   // SVG から PNG 形式に変換する
