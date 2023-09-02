@@ -6,6 +6,8 @@ date: "2023-1-5"
 image: "/images/blog/replace-with-astro.png"
 ---
 
+import OG from "../../components/OG.astro";
+
 ## はじめに
 
 年末から年始にかけて Next.js で作成した自分のサイトを Astro に移行しました。
@@ -30,8 +32,10 @@ Partytown や sitemap の設定を`integrations`に書くだけなので、め�
 
 ## OG Image
 
-OG Image の生成には [satori](https://github.com/vercel/satori) を使用しました。
+OG Image の生成には satori を使用しました。
 とりあえずビルド時に OG Image が動的に出力できるようにしています。(svg から png に変換するために `sharp`を使っています。)
+
+<OG url="https://github.com/vercel/satori" />
 
 下記のようなスクリプトを用意してビルド時に OG Image を生成するようにしています。
 
