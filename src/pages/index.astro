@@ -1,5 +1,5 @@
 ---
-import { Image } from "@astrojs/image/components";
+import { Image } from "astro:assets";
 import Layout from "~/layouts/Layout.astro";
 import NavigationButton from "~/components/NavigationButton.astro";
 import MainVisual from "../../public/images/cat.png";
@@ -19,8 +19,8 @@ import MainVisual from "../../public/images/cat.png";
               class="rounded-full"
               src={MainVisual}
               alt="wattanx"
-              height={192}
-              width={192}
+              height={MainVisual.width}
+              width={MainVisual.height}
             />
           </div>
           <div class="flex space-y-4 flex-col">

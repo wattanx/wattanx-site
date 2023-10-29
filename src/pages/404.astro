@@ -1,5 +1,5 @@
 ---
-import { Image } from "@astrojs/image/components";
+import { Image } from "astro:assets";
 import SiteHeader from "~/components/shared/SiteHeader.astro";
 import Layout from "~/layouts/Layout.astro";
 import GhostImage from "../../public/images/wattanx-ghost-chuck.png";
@@ -9,7 +9,12 @@ import GhostImage from "../../public/images/wattanx-ghost-chuck.png";
   <SiteHeader />
   <main class="container mx-auto min-h-screen">
     <div class="flex items-center justify-center flex-col space-y-4">
-      <Image width={360} height={360} src={GhostImage} alt="wattanx ghost" />
+      <Image
+        width={GhostImage.width}
+        height={GhostImage.height}
+        src={GhostImage}
+        alt="wattanx ghost"
+      />
       <h1 class="text-4xl text-center">404</h1>
       <h2 class="text-2xl text-center">page not found</h2>
     </div>
