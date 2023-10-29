@@ -1,6 +1,8 @@
 ---
 import Footer from "~/components/Footer.astro";
 import GA from "~/components/GA.astro";
+import { ViewTransitions } from "astro:transitions";
+
 export interface Props {
   title: string;
   description?: string;
@@ -47,6 +49,7 @@ const url = new URL(Astro.url.pathname, Astro.site);
       type="image/png"
       href="/images/cat_dot.png"
     />
+    <ViewTransitions />
   </head>
   <body>
     <slot />
