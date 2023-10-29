@@ -1,7 +1,6 @@
 import { defineConfig } from "astro/config";
 import react from "@astrojs/react";
 import tailwind from "@astrojs/tailwind";
-import image from "@astrojs/image";
 import mdx from "@astrojs/mdx";
 import remarkToc from "remark-toc";
 import partytown from "@astrojs/partytown";
@@ -18,9 +17,6 @@ export default defineConfig({
   integrations: [
     react(),
     tailwind(),
-    image({
-      serviceEntryPoint: "@astrojs/image/sharp",
-    }),
     mdx(),
     partytown({
       config: {
