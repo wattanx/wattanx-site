@@ -3,5 +3,35 @@
     "title": "wattanx",
     "description": "Personal website of wattanx.",
     "image": "https://wattanx.dev/images/cat.png"
+  },
+  "https://github.com/vercel/satori": {
+    "title": "GitHub - vercel/satori: Enlightened library to convert HTML and CSS to SVG",
+    "description": "Enlightened library to convert HTML and CSS to SVG - GitHub - vercel/satori: Enlightened library to convert HTML and CSS to SVG",
+    "image": "https://repository-images.githubusercontent.com/452769633/a1e1b5fa-b7aa-4cb8-922c-fe1bb31162d6"
+  },
+  "https://harlanzw.com/blog/nuxt-3-migration-cheatsheet": {
+    "title": "Nuxt 3 Migration Simplified: A Cheat Sheet | Harlan Wilton",
+    "description": "A simplified cheat sheet for migrating from Nuxt 2 to Nuxt 3. Includes a list of all the changes you need to make to your Nuxt 2 project to get it working with Nuxt 3.",
+    "image": "https://harlanzw.com/blog/nuxt-3-migration-cheatsheet/__og_image__/og.png"
+  },
+  "https://nuxt.com/docs/bridge/overview": {
+    "title": "Migrate to Nuxt Bridge: Overview",
+    "description": "Reduce the differences with Nuxt 3 and reduce the burden of migration to Nuxt 3.",
+    "image": "https://nuxt.com/docs/bridge/overview/__og_image__/og.png"
+  },
+  "https://speakerdeck.com/sugitat/yahoo-toraberunonuxt3yi-xing-niokerukai-fa-purosesu": {
+    "title": "一休. com/Yahoo!トラベルのNuxt3移行における開発プロセス",
+    "description": "",
+    "image": "https://files.speakerdeck.com/presentations/0c6b70d362074f3c81bcd45589573ced/slide_0.jpg?22861610"
+  },
+  "https://speakerdeck.com/wattanx/demystifying-nuxt-bridge": {
+    "title": "Demystifying Nuxt Bridge",
+    "description": "Vue Fes 2023\nwattanx",
+    "image": "https://files.speakerdeck.com/presentations/fa469a5d6fe143bfad107bae20fee3ff/slide_0.jpg?27615714"
+  },
+  "https://speakerdeck.com/hacomono/nuxt-2kara3hemaiguresiyonsurufang-fa-kao-etetara-maikurohurontoendonohuremuwakugadekitahua": {
+    "title": "Nuxt 2から3へマイグレーションする方法考えてたら、マイクロフロントエンドのフレームワークができた話",
+    "description": "プロジェクトは Nuxt2 で、ページ数やコンポーネントの数、コードの絡み具合から、どうしても Nuxt Bridge を使ってのマイグレーションは困難と判断せざるを得なかった。 そこで、元の資産に手を加えずに、ページ単位で Nuxt3 にどうやって移行していくかを考えていくことにした。 試行錯誤の末、マイクロフロントエンドのフレームワークが生まれてしまったのでした。\n\n株式会社hacomono\nフロントエンドテックリード 基盤グループ Enabling チーム\nVRChat フロントエンドエンジニア集会主催\nみゅーとん / mew-ton",
+    "image": "https://files.speakerdeck.com/presentations/dde26623424f4598bff9822129bd7716/slide_0.jpg?27637158"
   }
 }
