@@ -1,0 +1,101 @@
+---
+layout: "../../layouts/BlogLayout.astro"
+title: "Nuxt 3 に直接移行するか \nNuxt Bridge を使うか"
+description: "Nuxt 3 に直接移行するのがよいか、Nuxt Bridge を使って Nuxt 3 へ移行するのがよいか個人的な考えを書きました"
+date: "2023-11-03"
+image: "/images/blog/directly-nuxt3-vs-nuxt-bridge.png"
+---
+
+import OG from "../../components/OG.astro";
+
+## 結論
+
+以下のような条件にあてはまる場合は、Nuxt Bridge を使う恩恵を得られると思っています。
+
+- コンポーネントやページ数が多く、比較的大きなアプリケーション
+- Nuxt 3 へ移行するためのリソース（人員、工数）がない
+
+上記に当てはまらない場合は、Nuxt 3 へ直接移行したほうが効率が良いかもしれません。
+
+## はじめに
+
+Nuxt 3 へ移行する方法として、大きくは下記の二通りだと思っています。
+
+- Nuxt Bridge を使って Nuxt 3 へ移行する
+- Nuxt 3 へ直接移行する
+
+Nuxt Bridge を作っている身なのでもちろん Nuxt Bridge を使ってほしいですが、使わないほうが移行がスムーズだと思うケースもあるので、個人的にどう選んでいるかを書きます。
+
+## Nuxt Bridge を使った方がいいと思うケース
+
+### コンポーネントやページ数が多く、比較的大きなアプリケーション
+
+Nuxt 2 から Nuxt 3 では多くの破壊的変更があります。
+
+- `@nuxtjs/composition-api`が不要になる
+- `middleware`や`plugins`の書き方や登録方法が変更
+- Component Option から`definePageMeta`に変更
+- 他にもたくさん
+
+これらの対応を一つのリポジトリで行うのは、非常に大変です。
+
+Nuxt Bridge を使えば、Nuxt 2 の状態で Nuxt 3 移行が進められます。
+
+Nuxt Bridge を使うと Nuxt 3 との差分が小さくなるので、一つのリポジトリでも移行をしやすくなります。
+
+また、Nuxt Bridge を使った移行は少しずつ進められるので、一つのリポジトリでも進めやすいです。
+
+（私は 1000コンポーネント以上、170ページほどあるプロダクトで Nuxt Bridge を使っています。）
+
+### Nuxt 3 へ移行するためのリソース（人員、工数）がない
+
+Nuxt Bridge を使った移行は少しずつ進められます。
+
+そのため、まとまった時間がとれるまでは隙間時間で進めることができます。
+
+## Nuxt 3 へ直接移行したほうがいいと思うケース
+
+### コンポーネントやページ数が少なく、比較的小さなアプリケーション
+
+Nuxt Bridge は Nuxt 3 との差分を減らすことができますが、元々の規模が小さいと差分を減らしてもほとんど恩恵得られないと思っています。
+
+なので、小さいアプリケーションの場合は直接移行した方が良いと思っています。
+
+### 別リポジトリで作り直したいと思っている
+
+同じリポジトリ内で移行するのではなく、別リポジトリで作り直したいと思っている場合は、Nuxt 3 に直接移行したほうが効率が良いと思っています。
+
+別リポジトリで作り直す場合は、Nuxt 3 との差分を気にする必要がないので Nuxt Bridge の恩恵はほとんどないと思います。（差分を減らしてから移行してもよいが、テストを複数回する必要があり手間なので）
+
+## まとめ
+
+ここに書いてあることは Nuxt Bridge を作ったり、実際に使ったりして個人的に思っていることです。
+
+他にも様々な移行方法があると思います。自分たちのプロダクトにあった移行方法で進めていくのが良いと思っています。
+(どんな移行方法を選んでもしっかり計画を立てて進めるのがよいと思います。)
+
+## それぞれの移行方法に関する記事
+
+### Nuxt Bridge を使う場合
+
+これまでの経験をもとに書き直しました。改善点があればぜひ issue や PR 作っていただきたいです。
+
+<OG url="https://nuxt.com/docs/bridge/overview" />
+
+Vue Fes 2023 の登壇資料です。上記のドキュメントに補足を入れてます。実際に Nuxt Bridge の事例等も書いているのでぜひ参考にしていただければと。
+
+<OG url="https://speakerdeck.com/wattanx/demystifying-nuxt-bridge" />
+
+### Nuxt 3 へ直接移行する場合
+
+Nuxt Core Team の Harlan が書いたとてもいい記事です。ぜひ参考にしてください！
+
+<OG url="https://harlanzw.com/blog/nuxt-3-migration-cheatsheet" />
+
+同じリポジトリ内で Nuxt 3 に直接移行する方法が書かれていてとても参考になります。
+
+<OG url="https://speakerdeck.com/sugitat/yahoo-toraberunonuxt3yi-xing-niokerukai-fa-purosesu" />
+
+iframe を使って Nuxt 3 へのマイグレーションを進める方法が書かれています。
+
+<OG url="https://speakerdeck.com/hacomono/nuxt-2kara3hemaiguresiyonsurufang-fa-kao-etetara-maikurohurontoendonohuremuwakugadekitahua" />

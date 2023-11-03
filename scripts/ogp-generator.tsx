@@ -40,9 +40,12 @@ const generateOgpImage = async (title: string) => {
           justifyContent: "space-between",
           borderRadius: "1rem",
           height: "90%",
+          width: "100%",
         }}
       >
-        <p style={{ fontSize: 64, fontWeight: 700 }}>{title}</p>
+        <p style={{ fontSize: 64, fontWeight: 700, whiteSpace: "pre-wrap" }}>
+          {title}
+        </p>
 
         <div style={{ display: "flex", alignItems: "center" }}>
           <img

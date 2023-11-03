@@ -16,6 +16,9 @@ type OGPJson = {
 
 const { url } = Astro.props;
 
+const placeholder =
+  "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAQSURBVHgBAQUA+v8AGxsb/wH3AVH/ieXLAAAAAElFTkSuQmCC";
+
 const generatedFilePath = new URL("../../cache/ogp.json", import.meta.url);
 
 const cache: OGPJson = JSON.parse(readFileSync(generatedFilePath, "utf8"));
@@ -81,6 +84,7 @@ if (cache[url]) {
           class="object-cover w-full sm:w-full h-full rounded-r-lg"
           alt="title"
           decoding="async"
+          onerror={`this.onerror=null; this.src='${placeholder}'`}
         />
       </div>
     )
