@@ -7,11 +7,11 @@ import GhostImage from "../../public/images/wattanx-ghost-chuck.png";
 
 <Layout title="404" noindex>
   <SiteHeader />
-  <main class="container mx-auto min-h-screen">
+  <main class="container mx-auto min-h-[calc(100vh-176px)]">
     <div class="flex items-center justify-center flex-col space-y-4">
-      <Image
-        width={GhostImage.width}
-        height={GhostImage.height}
+      <Image class="w-[320px] h-[320px]"
+        width={620}
+        height={620}
         src={GhostImage}
         alt="wattanx ghost"
       />
