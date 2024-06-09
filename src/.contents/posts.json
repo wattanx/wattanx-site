@@ -1,7 +1,7 @@
 [
   {
     "title": "JestとVitestのisolateについて",
-    "contentSnippet": "はじめに!Vitest のバージョンは 0.28.5時点での話です。現状 Vitest が Jest など他のテスティングフレームワークに比べて遅くなる場合があることがわかっています。(確実に遅くなるとはいえない。が、私自身もテストの速度が遅くなったことを経験しています。)https://github.com/vitest-dev/vitest/issues/579!vitest runで実行した場合の話であり、watchモードは高速です。また Vitest を実行する場合、--no-threadsオプションをつけると速くなるということもわかっています。http...",
+    "contentSnippet": "はじめに!Vitest のバージョンは 0.31.0時点での話です。現状 Vitest が Jest など他のテスティングフレームワークに比べて遅くなる場合があることがわかっています。(確実に遅くなるとはいえない。が、私自身もテストの速度が遅くなったことを経験しています。)https://github.com/vitest-dev/vitest/issues/579!vitest runで実行した場合の話であり、watchモードは高速です。また Vitest を実行する場合、--single-threadオプションをつけると速くなるということもわかっています。(...",
     "link": "https://zenn.dev/wattanx/articles/jest-vitest-isolate",
     "isoDate": "2023-02-23T05:59:26.000Z",
     "dateMiliSeconds": 1677131966000

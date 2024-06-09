@@ -17,7 +17,8 @@ const {
   noindex,
 } = Astro.props;
 
-const ogImage = new URL(image ?? "/images/cat.png", Astro.site?.origin!).href;
+const ogImage = new URL(image ?? "/images/wattanx_og.png", Astro.site?.origin!)
+  .href;
 const url = new URL(Astro.url.pathname, Astro.site);
 ---
 

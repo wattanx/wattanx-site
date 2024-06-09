@@ -14,7 +14,7 @@ export const getRepositories = async () => {
   })) as RestEndpointMethodTypes["repos"]["listPublic"]["response"];
 
   return data
-    .filter((x) => x.stargazers_count && x.stargazers_count > 0 && !x.archived)
+    .filter((x) => x.stargazers_count && x.stargazers_count > 1 && !x.archived)
     .sort((a, b) => b.stargazers_count! - a.stargazers_count!);
 };
 
