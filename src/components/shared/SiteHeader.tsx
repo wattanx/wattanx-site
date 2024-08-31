@@ -9,30 +9,6 @@ export const SiteHeader: React.FC = () => {
               wattanx
             </a>
           </div>
-          <div className="items-center">
-            <a
-              rel="prefetch"
-              href="/timeline"
-              className="py-2 px-4 cursor-pointer text-base no-underline hover:bg-gray-800 hover:duration-200 hover:rounded-md"
-            >
-              Timeline
-            </a>
-
-            <a
-              rel="prefetch"
-              href="/blog"
-              className="py-2 px-4 text-base cursor-pointer no-underline hover:bg-gray-800 hover:duration-200 hover:rounded-md"
-            >
-              Blog
-            </a>
-            <a
-              rel="prefetch"
-              href="/about"
-              className="py-2 px-4 text-base cursor-pointer no-underline hover:bg-gray-800 hover:duration-200 hover:rounded-md"
-            >
-              About
-            </a>
-          </div>
         </div>
       </div>
     </header>

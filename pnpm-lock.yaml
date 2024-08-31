@@ -73,9 +73,6 @@ devDependencies:
   '@types/jsdom':
     specifier: ^21.1.1
     version: 21.1.1
-  '@types/lodash.uniqueid':
-    specifier: ^4.0.7
-    version: 4.0.7
   '@types/sharp':
     specifier: ^0.31.1
     version: 0.31.1
@@ -94,9 +91,6 @@ devDependencies:
   jsdom:
     specifier: ^21.1.1
     version: 21.1.1
-  lodash.uniqueid:
-    specifier: ^4.0.1
-    version: 4.0.1
   prettier:
     specifier: ^3.0.2
     version: 3.0.2
@@ -1640,16 +1634,6 @@ packages:
       '@types/node': 20.4.4
       '@types/tough-cookie': 4.0.2
       parse5: 7.1.2
-    dev: true
-
-  /@types/lodash.uniqueid@4.0.7:
-    resolution: {integrity: sha512-ipMGW5nR+DTR6U5O08k1Ufr1F9iH+F3p7bhdwsnq6V6nCn/HgMq22UalDq4n91+03+pHFKyeXV1Y7vdJrm7S4g==}
-    dependencies:
-      '@types/lodash': 4.14.195
-    dev: true
-
-  /@types/lodash@4.14.195:
-    resolution: {integrity: sha512-Hwx9EUgdwf2GLarOjQp5ZH8ZmblzcbTBC2wtQWNKARBSxM9ezRIAUpeDTgoQRAFB0+8CNWXVA9+MaSOzOF3nPg==}
     dev: true
 
   /@types/mdast@3.0.12:
@@ -3524,10 +3508,6 @@ packages:
   /lodash.merge@4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
     dev: false
-
-  /lodash.uniqueid@4.0.1:
-    resolution: {integrity: sha512-GQQWaIeGlL6DIIr06kj1j6sSmBxyNMwI8kaX9aKpHR/XsMTiaXDVPNPAkiboOTK9OJpTJF/dXT3xYoFQnj386Q==}
-    dev: true
 
   /log-symbols@5.1.0:
     resolution: {integrity: sha512-l0x2DvrW294C9uDCoQe1VSU4gf529FkSZ6leBl4TiqZH/e+0R7hSfHQBNut2mNygDgHwvYHfFLn6Oxb3VWj2rA==}
