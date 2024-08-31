@@ -34,7 +34,6 @@
     "@types/dompurify": "3.0.1",
     "@types/fs-extra": "9.0.13",
     "@types/jsdom": "21.1.1",
-    "@types/sharp": "0.31.1",
     "cheerio": "1.0.0-rc.12",
     "date-fns": "2.29.3",
     "dompurify": "3.0.1",
