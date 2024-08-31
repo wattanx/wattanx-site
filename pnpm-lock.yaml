@@ -70,8 +70,8 @@ importers:
         specifier: 1.0.0-rc.12
         version: 1.0.0-rc.12
       date-fns:
-        specifier: 2.29.3
-        version: 2.29.3
+        specifier: 3.6.0
+        version: 3.6.0
       dompurify:
         specifier: 3.0.1
         version: 3.0.1
@@ -1405,9 +1405,8 @@ packages:
     resolution: {integrity: sha512-/mMTei/JXPqvFqQtfyTowxmJVwr2PVAeCcDxyFf6LhoOu/09TX2OX3kb2wzi4DMXcfj4OItwDOnhl5oziPnT6g==}
     engines: {node: '>=14'}
 
-  date-fns@2.29.3:
-    resolution: {integrity: sha512-dDCnyH2WnnKusqvZZ6+jA1O51Ibt8ZMRNkDZdyAyK4YfbDwa/cEmuztzG5pk6hqlp9aSBPYcjOlktquahGwGeA==}
-    engines: {node: '>=0.11'}
+  date-fns@3.6.0:
+    resolution: {integrity: sha512-fRHTG8g/Gif+kSh50gaGEdToemgfj74aRX3swtiouboip5JDLAyDE9F11nHMIcvOaXeOC6D7SpNhi7uFyB7Uww==}
 
   debug@2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
@@ -4506,7 +4505,7 @@ snapshots:
       whatwg-mimetype: 3.0.0
       whatwg-url: 12.0.1
 
-  date-fns@2.29.3: {}
+  date-fns@3.6.0: {}
 
   debug@2.6.9:
     dependencies:
