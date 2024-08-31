@@ -11,9 +11,6 @@ dependencies:
   '@astrojs/partytown':
     specifier: 2.1.2
     version: 2.1.2
-  '@astrojs/prefetch':
-    specifier: 0.4.1
-    version: 0.4.1
   '@astrojs/react':
     specifier: 3.6.2
     version: 3.6.2(@types/react-dom@18.0.10)(@types/react@18.0.21)(react-dom@18.2.0)(react@18.2.0)(vite@4.5.0)
@@ -67,9 +64,6 @@ devDependencies:
   '@types/jsdom':
     specifier: 21.1.1
     version: 21.1.1
-  '@types/sharp':
-    specifier: 0.31.1
-    version: 0.31.1
   cheerio:
     specifier: 1.0.0-rc.12
     version: 1.0.0-rc.12
@@ -180,12 +174,6 @@ packages:
     dependencies:
       '@builder.io/partytown': 0.10.2
       mrmime: 2.0.0
-    dev: false
-
-  /@astrojs/prefetch@0.4.1:
-    resolution: {integrity: sha512-bpC875BqeIuWVgqhi4X814ftzzbKocaLkiZczaj8k5J2SRpueIGkww3XmD+yY/Ekkm9j30aS3neVO6wSm4IJNA==}
-    dependencies:
-      throttles: 1.0.1
     dev: false
 
   /@astrojs/prism@3.0.0:
@@ -1930,12 +1918,6 @@ packages:
   /@types/scheduler@0.16.3:
     resolution: {integrity: sha512-5cJ8CB4yAx7BH1oMvdU0Jh9lrEXyPkar6F9G/ERswkCuvP4KQZfZkSjcMbAICCpQTN4OuZn8tz0HiKv9TGZgrQ==}
     dev: false
-
-  /@types/sharp@0.31.1:
-    resolution: {integrity: sha512-5nWwamN9ZFHXaYEincMSuza8nNfOof8nmO+mcI+Agx1uMUk4/pQnNIcix+9rLPXzKrm1pS34+6WRDbDV0Jn7ag==}
-    dependencies:
-      '@types/node': 20.4.4
-    dev: true
 
   /@types/tough-cookie@4.0.2:
     resolution: {integrity: sha512-Q5vtl1W5ue16D+nIaW8JWebSSraJVlK+EthKn7e7UcD4KWsaSJ8BqGPXNaPghgtcn/fhvrN17Tv8ksUsQpiplw==}
@@ -5608,11 +5590,6 @@ packages:
     resolution: {integrity: sha512-RVZSIV5IG10Hk3enotrhvz0T9em6cyHBLkH/YAZuKqd8hRkKhSfCGIcP2KUY0EPxndzANBmNllzWPwak+bheSw==}
     dependencies:
       any-promise: 1.3.0
-    dev: false
-
-  /throttles@1.0.1:
-    resolution: {integrity: sha512-fab7Xg+zELr9KOv4fkaBoe/b3L0GMGLd0IBSCn16GoE/Qx6/OfCr1eGNyEcDU2pUA79qQfZ8kPQWlRuok4YwTw==}
-    engines: {node: '>=6'}
     dev: false
 
   /to-fast-properties@2.0.0:

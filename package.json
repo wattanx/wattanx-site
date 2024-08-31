@@ -15,7 +15,6 @@
   "dependencies": {
     "@astrojs/mdx": "1.1.5",
     "@astrojs/partytown": "2.1.2",
-    "@astrojs/prefetch": "0.4.1",
     "@astrojs/react": "3.6.2",
     "@astrojs/rss": "3.0.0",
     "@astrojs/sitemap": "3.1.6",
@@ -35,7 +34,6 @@
     "@types/dompurify": "3.0.1",
     "@types/fs-extra": "9.0.13",
     "@types/jsdom": "21.1.1",
-    "@types/sharp": "0.31.1",
     "cheerio": "1.0.0-rc.12",
     "date-fns": "2.29.3",
     "dompurify": "3.0.1",

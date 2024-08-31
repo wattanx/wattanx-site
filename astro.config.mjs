@@ -9,9 +9,6 @@ import partytown from "@astrojs/partytown";
 import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
-import prefetch from "@astrojs/prefetch";
-
-// https://astro.build/config
 export default defineConfig({
   site: "https://wattanx.dev/",
   integrations: [
@@ -24,7 +21,6 @@ export default defineConfig({
       },
     }),
     sitemap(),
-    prefetch(),
   ],
   markdown: {
     remarkPlugins: [remarkToc],
@@ -32,4 +28,5 @@ export default defineConfig({
       theme: "slack-dark",
     },
   },
+  prefetch: true,
 });
