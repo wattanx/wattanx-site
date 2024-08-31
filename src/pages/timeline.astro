@@ -1,5 +1,4 @@
 ---
-import uniqueid from "lodash.uniqueid";
 import Layout from "~/layouts/Layout.astro";
 import { SiteHeader } from "~/components/shared/SiteHeader";
 import { TimelineBlock } from "~/components/timeline";
@@ -13,7 +12,7 @@ import { getPosts } from "~/utils/helper";
 const posts = getPosts();
 
 const _articles: TimelineOfArticle[] = posts.map((x) => {
-  const id = uniqueid();
+  const id = crypto.randomUUID();
   return {
     id: id,
     title: x.title,
@@ -27,7 +26,7 @@ const _articles: TimelineOfArticle[] = posts.map((x) => {
 
 const _works: TimelineOfWorks[] = [
   {
-    id: uniqueid(),
+    id: crypto.randomUUID(),
     companyName: "nanoconnect, Inc.",
     link: "https://www.nanoconnect.co.jp/",
     joinedDate: "2019-04-01",
@@ -36,7 +35,7 @@ const _works: TimelineOfWorks[] = [
     day: 1,
   },
   {
-    id: uniqueid(),
+    id: crypto.randomUUID(),
     companyName: "STORES, inc.",
     link: "https://www.st.inc/",
     joinedDate: "2022-01-01",
@@ -45,7 +44,7 @@ const _works: TimelineOfWorks[] = [
     day: 1,
   },
   {
-    id: uniqueid(),
+    id: crypto.randomUUID(),
     companyName: "nanoconnect, Inc.",
     link: "https://www.nanoconnect.co.jp/",
     leavedDate: "2021-12-31",
