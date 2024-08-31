@@ -1,54 +1,61 @@
 ---
-import { Image } from "astro:assets";
 import Layout from "~/layouts/Layout.astro";
-import NavigationButton from "~/components/NavigationButton.astro";
-import MainVisual from "../../public/images/cat.png";
+import Card from "~/components/Card.astro";
+import { getBlogs } from "~/utils/blog";
+
+const posts = await getBlogs();
 ---
 
 <Layout title="wattanx">
-  <main class="flex-1 pt-28 overflow-x-hidden max-w-[60ch] m-auto">
-    <section
-      class="pt-11 px-0 container flex justify-center items-center flex-col"
-    >
-      <div class="flex max-w-[400px] container py-0 px-5 justify-center">
-        <div
-          class="flex justify-center items-center w-full relative rounded-[37px] border-[3px] py-8 border-white"
-        >
-          <div class="w-24 h-24 absolute top-[-70px]">
-            <Image
-              class="rounded-full"
-              src={MainVisual}
-              alt="wattanx"
-              height={MainVisual.width}
-              width={MainVisual.height}
-            />
-          </div>
-          <div class="flex space-y-4 flex-col">
-            <h1 class="text-5xl font-bold text-center p-2 text-white">
-              wattanx
-            </h1>
-            <p class="text-xl font-medium text-center mt-3 text-white">
-              Software Developer
-            </p>
-          </div>
-        </div>
+  <main class="mx-auto max-w-[692px] py-20 px-4">
+    <h1>wattanx</h1>
+
+    <section class="mt-12">
+      <h2>Abount</h2>
+
+      <p class="text-gray-400">
+        I'm wattanx. A software developer based in Japan.
+      </p>
+    </section>
+
+    <section class="mt-20">
+      <h2>Projects</h2>
+
+      <div class="grid grid-cols-1 gap-4 mt-4">
+        <Card
+          href="https://github.com/wattanx/wattanx-converter"
+          title="wattanx-converter"
+          description="wattanx-converter provides useful tools for Vue and Nuxt."
+        />
+
+        <Card
+          href="https://github.com/nuxt/bridge"
+          title="Nuxt Bridge"
+          description="🌉 Experience Nuxt 3 features on existing Nuxt 2 projects"
+        />
+
+        <Card
+          href="https://uilabs.wattanx.dev/"
+          title="UILabs"
+          description="A place to experiment with feel good UI"
+        />
       </div>
-      <div class="flex space-y-7 flex-col max-w-[400px] container p-5 mt-5">
-        <NavigationButton
-          href="/timeline"
-          text="Timeline"
-          borderColor="border-pink-500"
-        />
-        <NavigationButton
-          href="/blog"
-          text="Blog"
-          borderColor="border-yellow-500"
-        />
-        <NavigationButton
-          href="/about"
-          text="About"
-          borderColor="border-blue-500"
-        />
+    </section>
+
+    <section class="mt-20">
+      <h2>Blog</h2>
+
+      <div class="grid grid-cols-1 gap-4 mt-4">
+        {
+          posts.map(({ data, slug }) => (
+            <Card
+              prefetch={true}
+              href={`/blog/${slug}`}
+              title={data.title}
+              description={data.description}
+            />
+          ))
+        }
       </div>
     </section>
   </main>
