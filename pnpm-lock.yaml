@@ -64,8 +64,8 @@ importers:
         specifier: 9.0.13
         version: 9.0.13
       '@types/jsdom':
-        specifier: 21.1.1
-        version: 21.1.1
+        specifier: 21.1.7
+        version: 21.1.7
       cheerio:
         specifier: 1.0.0-rc.12
         version: 1.0.0-rc.12
@@ -79,8 +79,8 @@ importers:
         specifier: 11.1.0
         version: 11.1.0
       jsdom:
-        specifier: 21.1.1
-        version: 21.1.1
+        specifier: 21.1.2
+        version: 21.1.2
       prettier:
         specifier: 3.3.3
         version: 3.3.3
@@ -1043,8 +1043,8 @@ packages:
   '@types/hast@3.0.2':
     resolution: {integrity: sha512-B5hZHgHsXvfCoO3xgNJvBnX7N8p86TqQeGKXcokW4XXi+qY4vxxPSFYofytvVmpFxzPv7oxDQzjg5Un5m2/xiw==}
 
-  '@types/jsdom@21.1.1':
-    resolution: {integrity: sha512-cZFuoVLtzKP3gmq9eNosUL1R50U+USkbLtUQ1bYVgl/lKp0FZM7Cq4aIHAL8oIvQ17uSHi7jXPtfDOdjPwBE7A==}
+  '@types/jsdom@21.1.7':
+    resolution: {integrity: sha512-yOriVnggzrnQ3a9OKOCxaVuSug3w3/SbOj5i7VwXWZEyUNl3bLF9V3MfxGbZKuwqJOQyRfqXyROBB1CoZLFWzA==}
 
   '@types/mdast@3.0.12':
     resolution: {integrity: sha512-DT+iNIRNX884cx0/Q1ja7NyUPpZuv0KPyL5rGNxm1WC1OtHstl7n4Jb7nk+xacNShQMbczJjt8uFzznpp6kYBg==}
@@ -1935,8 +1935,8 @@ packages:
     resolution: {integrity: sha512-wpxZs9NoxZaJESJGIZTyDEaYpl0FKSA+FB9aJiyemKhMwkxQg63h4T1KJgUGHpTqPDNRcmmYLugrRjJlBtWvRA==}
     hasBin: true
 
-  jsdom@21.1.1:
-    resolution: {integrity: sha512-Jjgdmw48RKcdAIQyUD1UdBh2ecH7VqwaXPN3ehoZN6MqgVbMn+lRm1aAT1AsdJRAJpwfa4IpwgzySn61h2qu3w==}
+  jsdom@21.1.2:
+    resolution: {integrity: sha512-sCpFmK2jv+1sjff4u7fzft+pUh2KSUbUrEHYHyfSIbGTIcmnjyp83qg6qLwdJ/I3LpTXx33ACxeRL7Lsyc6lGQ==}
     engines: {node: '>=14'}
     peerDependencies:
       canvas: ^2.5.0
@@ -4048,7 +4048,7 @@ snapshots:
 
   '@types/dompurify@3.0.1':
     dependencies:
-      '@types/jsdom': 21.1.1
+      '@types/jsdom': 21.1.7
       '@types/trusted-types': 2.0.3
 
   '@types/estree-jsx@1.0.0':
@@ -4071,7 +4071,7 @@ snapshots:
     dependencies:
       '@types/unist': 3.0.1
 
-  '@types/jsdom@21.1.1':
+  '@types/jsdom@21.1.7':
     dependencies:
       '@types/node': 20.4.4
       '@types/tough-cookie': 4.0.2
@@ -5148,7 +5148,7 @@ snapshots:
     dependencies:
       argparse: 2.0.1
 
-  jsdom@21.1.1:
+  jsdom@21.1.2:
     dependencies:
       abab: 2.0.6
       acorn: 8.10.0
