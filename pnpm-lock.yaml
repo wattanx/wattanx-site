@@ -61,8 +61,8 @@ importers:
         specifier: 3.0.1
         version: 3.0.1
       '@types/fs-extra':
-        specifier: 9.0.13
-        version: 9.0.13
+        specifier: 11.0.4
+        version: 11.0.4
       '@types/jsdom':
         specifier: 21.1.1
         version: 21.1.1
@@ -76,8 +76,8 @@ importers:
         specifier: 3.0.1
         version: 3.0.1
       fs-extra:
-        specifier: 11.1.0
-        version: 11.1.0
+        specifier: 11.2.0
+        version: 11.2.0
       jsdom:
         specifier: 21.1.1
         version: 21.1.1
@@ -1031,8 +1031,8 @@ packages:
   '@types/extend@3.0.1':
     resolution: {integrity: sha512-R1g/VyKFFI2HLC1QGAeTtCBWCo6n75l41OnsVYNbmKG+kempOESaodf6BeJyUM3Q0rKa/NQcTHbB2+66lNnxLw==}
 
-  '@types/fs-extra@9.0.13':
-    resolution: {integrity: sha512-nEnwB++1u5lVDM2UI4c1+5R+FYaKfaAzS4OococimjVm3nQw3TuzH5UNsocrcTBbhnerblyHj4A49qXbIiZdpA==}
+  '@types/fs-extra@11.0.4':
+    resolution: {integrity: sha512-yTbItCNreRooED33qjunPthRcSjERP1r4MqCZc7wv0u2sUkzTFp45tgUfS5+r7FrZPdmCCNflLhVSP/o+SemsQ==}
 
   '@types/hast@2.3.5':
     resolution: {integrity: sha512-SvQi0L/lNpThgPoleH53cdjB3y9zpLlVjRbqB3rH8hx1jiRSBGAhyjV3H+URFjNVRqt2EdYNrbZE5IsGlNfpRg==}
@@ -1042,6 +1042,9 @@ packages:
 
   '@types/jsdom@21.1.1':
     resolution: {integrity: sha512-cZFuoVLtzKP3gmq9eNosUL1R50U+USkbLtUQ1bYVgl/lKp0FZM7Cq4aIHAL8oIvQ17uSHi7jXPtfDOdjPwBE7A==}
+
+  '@types/jsonfile@6.1.4':
+    resolution: {integrity: sha512-D5qGUYwjvnNNextdU59/+fI+spnwtTFmyQP0h+PfIOSkNfpU6AOICUOkm4i0OnSk+NyjdPJrxCDro0sJsWlRpQ==}
 
   '@types/mdast@3.0.12':
     resolution: {integrity: sha512-DT+iNIRNX884cx0/Q1ja7NyUPpZuv0KPyL5rGNxm1WC1OtHstl7n4Jb7nk+xacNShQMbczJjt8uFzznpp6kYBg==}
@@ -1662,8 +1665,8 @@ packages:
   fs-constants@1.0.0:
     resolution: {integrity: sha512-y6OAwoSIf7FyjMIv94u+b5rdheZEjzR63GTyZJm5qh4Bi+2YgwLCcI/fPFZkL5PSixOt6ZNKm+w+Hfp/Bciwow==}
 
-  fs-extra@11.1.0:
-    resolution: {integrity: sha512-0rcTq621PD5jM/e0a3EJoGC/1TC5ZBCERW82LQuwfGnCa1V8w7dpYH1yNu+SLb6E5dkeCBzKEyLGlFrnr+dUyw==}
+  fs-extra@11.2.0:
+    resolution: {integrity: sha512-PmDi3uwK5nFuXh7XDTlVnS17xJS7vW36is2+w3xcv8SVxiB4NyATf4ctkVY5bkSjX0Y4nbvZCq1/EjtEyr9ktw==}
     engines: {node: '>=14.14'}
 
   fs.realpath@1.0.0:
@@ -4054,8 +4057,9 @@ snapshots:
 
   '@types/extend@3.0.1': {}
 
-  '@types/fs-extra@9.0.13':
+  '@types/fs-extra@11.0.4':
     dependencies:
+      '@types/jsonfile': 6.1.4
       '@types/node': 20.4.4
 
   '@types/hast@2.3.5':
@@ -4071,6 +4075,10 @@ snapshots:
       '@types/node': 20.4.4
       '@types/tough-cookie': 4.0.2
       parse5: 7.1.2
+
+  '@types/jsonfile@6.1.4':
+    dependencies:
+      '@types/node': 20.4.4
 
   '@types/mdast@3.0.12':
     dependencies:
@@ -4798,7 +4806,7 @@ snapshots:
   fs-constants@1.0.0:
     optional: true
 
-  fs-extra@11.1.0:
+  fs-extra@11.2.0:
     dependencies:
       graceful-fs: 4.2.11
       jsonfile: 6.1.0
