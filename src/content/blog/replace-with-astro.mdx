@@ -26,14 +26,14 @@ import OG from "../../components/OG.astro";
 
 ## Astro めっちゃ楽
 
-Partytown や sitemap の設定を`integrations`に書くだけなので、めっちゃ楽で快適でした。
+Partytown や sitemap の設定を `integrations` に書くだけなので、めっちゃ楽で快適でした。
 
 元々 tsx で書いていたコンポーネントをそのまま使えるので移行も簡単でした。(ハイドレーションするかどうかコンポーネント単位で選べるのが良い)
 
 ## OG Image
 
 OG Image の生成には satori を使用しました。
-とりあえずビルド時に OG Image が動的に出力できるようにしています。(svg から png に変換するために `sharp`を使っています。)
+とりあえずビルド時に OG Image が動的に出力できるようにしています。(svg から png に変換するために `sharp` を使っています。)
 
 <OG url="https://github.com/vercel/satori" />
 
@@ -130,15 +130,15 @@ const generateOgpImage = async (title: string) => {
 
 [Timeline](https://wattanx.dev/timeline) を作成するにあたって、Tab の Component を作成する必要があったのですが、実装するのが手間なので [Radix UI](https://www.radix-ui.com/) を使いました。
 
-`@radix-ui/react-tabs`を使用した状態でビルドした場合、下記のようなエラーが表示されてビルドできませんでした。
+`@radix-ui/react-tabs` を使用した状態でビルドした場合、下記のようなエラーが表示されてビルドできませんでした。
 
-(`yarn dev`は問題ない)
+(`yarn dev` は問題ない)
 
 ```
 Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined.
 ```
 
-原因のソースコードは下記のような形で`@radix-ui/react-tabs`を import しているところにありました。
+原因のソースコードは下記のような形で `@radix-ui/react-tabs` を import しているところにありました。
 
 ```tsx
 import * as Tabs from "@radix-ui/react-tabs";
