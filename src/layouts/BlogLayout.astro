@@ -21,7 +21,7 @@ const date = formatDate(new Date(frontmatter.date));
   <main
     class="flex gap-4 px-4 py-14 container mx-auto min-h-screen justify-center"
   >
-    <article class="bg-gray-800 rounded-lg p-6 w-full max-w-[780px]">
+    <article class="rounded-lg p-6 w-full max-w-[780px]">
       <h1 class="text-2xl mb-8 font-bold">{title}</h1>
       <div class="flex justify-end mb-8 space-x-2">
         <p>{date}</p>
@@ -91,7 +91,7 @@ const date = formatDate(new Date(frontmatter.date));
   }
 
   .contents code:not(pre > *) {
-    @apply text-gray-400  bg-[#636e7b66] mx-1 px-1 rounded-md shadow-lg ring-white/5;
+    @apply text-white  bg-[#636e7b66] mx-1 px-1.5 py-0.5 rounded-md shadow-lg ring-white/5;
   }
 
   .contents pre {
