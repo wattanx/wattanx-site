@@ -22,13 +22,12 @@ const generateOgpImage = async (title: string) => {
         height: "100%",
         width: "100%",
         display: "flex",
-        backgroundImage: "linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%)",
+        backgroundColor: "#fff",
         color: "#fff",
         fontSize: 48,
         fontWeight: 600,
         justifyContent: "center",
         alignItems: "center",
-        padding: "0 2rem",
       }}
     >
       <div
@@ -36,26 +35,26 @@ const generateOgpImage = async (title: string) => {
           display: "flex",
           flexDirection: "column",
           padding: "1rem 4rem",
-          backgroundColor: "#282b2f",
-          justifyContent: "space-between",
-          borderRadius: "1rem",
-          height: "90%",
+          backgroundColor: "#1b1b1b",
+          justifyContent: "center",
+          height: "100%",
           width: "100%",
         }}
       >
-        <p style={{ fontSize: 64, fontWeight: 700, whiteSpace: "pre-wrap" }}>
+        <span style={{ fontSize: 40, fontWeight: 700, whiteSpace: "pre-wrap" }}>
           {title}
-        </p>
+        </span>
 
-        <div style={{ display: "flex", alignItems: "center" }}>
-          <img
-            src="https://avatars.githubusercontent.com/wattanx"
-            width={80}
-            height={80}
-            style={{ borderRadius: "100%" }}
-          />
-          <p style={{ marginLeft: "16px", fontWeight: 400 }}>wattanx</p>
-        </div>
+        <span
+          style={{
+            fontSize: 32,
+            marginTop: "16px",
+            fontWeight: 400,
+            color: "#9CA3AF",
+          }}
+        >
+          wattanx
+        </span>
       </div>
     </div>,
     {
