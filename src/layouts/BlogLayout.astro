@@ -76,6 +76,10 @@ const date = formatDate(new Date(frontmatter.date));
     @apply my-0;
   }
 
+  .contents ul > li {
+    @apply my-1;
+  }
+
   .contents p {
     @apply my-4;
   }
@@ -91,8 +95,24 @@ const date = formatDate(new Date(frontmatter.date));
     @apply px-4 border border-gray-900 border-l-blue-300 border-l-2;
   }
 
+  .contents code {
+    @apply font-body;
+  }
+
+  .contents pre > code {
+    font-family:
+      Menlo,
+      Monaco,
+      Lucida Console,
+      Liberation Mono,
+      DejaVu Sans Mono,
+      Bitstream Vera Sans Mono,
+      Courier New,
+      monospace;
+  }
+
   .contents code:not(pre > *) {
-    @apply text-white  bg-[#636e7b66] px-1.5 py-0.5 rounded-md shadow-lg ring-white/5;
+    @apply text-white  bg-[#222222] px-1.5 py-[1px] rounded-md shadow-lg ring-white/5 border border-solid border-[#3f3f3f];
   }
 
   .contents pre {
