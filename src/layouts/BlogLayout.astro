@@ -85,8 +85,13 @@ const date = formatDate(new Date(frontmatter.date));
   }
 
   .contents a {
-    @apply text-blue-600;
+    text-decoration: underline;
     word-break: break-all;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    text-decoration-color: #62605b;
+    text-decoration-style: dotted;
+    @apply hover:decoration-[#6f6d66] hover:decoration-solid;
   }
 
   .contents strong {
