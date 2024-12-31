@@ -22,8 +22,8 @@ const date = formatDate(new Date(frontmatter.date));
     class="flex gap-4 px-6 py-14 container mx-auto min-h-screen justify-center"
   >
     <article class="rounded-lg w-full max-w-[780px]">
-      <h1 class="text-2xl mb-8 font-bold">{title}</h1>
-      <div class="flex justify-end mb-8 space-x-2">
+      <h1 class="text-2xl mb-2 font-bold">{title}</h1>
+      <div class="flex mb-8 space-x-2">
         <p>{date}</p>
         <a
           class="text-blue-600 hover:underline"
@@ -85,7 +85,13 @@ const date = formatDate(new Date(frontmatter.date));
   }
 
   .contents a {
-    @apply text-blue-600;
+    text-decoration: underline;
+    word-break: break-all;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    text-decoration-color: #62605b;
+    text-decoration-style: dotted;
+    @apply hover:decoration-[#6f6d66] hover:decoration-solid;
   }
 
   .contents strong {
