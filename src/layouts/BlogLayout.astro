@@ -117,8 +117,12 @@ const date = formatDate(new Date(frontmatter.date));
       monospace;
   }
 
-  .contents code:not(pre > *) {
+  .dark .contents code:not(pre > *) {
     @apply text-white  bg-[#222222] px-1.5 py-[1px] rounded-md shadow-lg ring-white/5 border border-solid border-[#3f3f3f];
+  }
+
+  .contents code:not(pre > *) {
+    @apply text-[#21201c] bg-[#f9f9f8] px-1.5 py-[1px] rounded-md ring-white/5 border border-solid border-[#e9e9e7];
   }
 
   .contents pre {
