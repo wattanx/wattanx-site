@@ -12,11 +12,11 @@ const { href, title, description, prefetch = false } = Astro.props;
 <a
   href={href}
   rel={prefetch ? "prefetch" : ""}
-  class="hover:bg-[#222222] space-y-4 border-none rounded-lg px-3 py-2 -mx-3"
+  class="dark:hover:bg-[#222222] hover:bg-[#F5F4F4] space-y-4 border-none rounded-lg px-3 py-2 -mx-3"
 >
   <div class="space-y-1">
     <p class="">{title}</p>
-    <p class="text-gray-400">
+    <p class="dark:text-gray-400 text-[#63635e]">
       {description}
     </p>
   </div>
