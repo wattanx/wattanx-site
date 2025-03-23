@@ -1,7 +1,7 @@
 ---
 import Footer from "~/components/Footer.astro";
 import GA from "~/components/GA.astro";
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 
 export interface Props {
   title: string;
@@ -78,7 +78,7 @@ const url = new URL(Astro.url.pathname, Astro.site);
     <link rel="canonical" href={url} />
     <link rel="icon" type="image/svg+xml" sizes="any" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <ViewTransitions />
+    <ClientRouter />
   </head>
   <body>
     <slot />
