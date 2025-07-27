@@ -70,8 +70,8 @@ importers:
         specifier: 1.0.0-rc.12
         version: 1.0.0-rc.12
       date-fns:
-        specifier: 2.29.3
-        version: 2.29.3
+        specifier: 2.30.0
+        version: 2.30.0
       dompurify:
         specifier: 3.0.1
         version: 3.0.1
@@ -254,6 +254,7 @@ packages:
   '@builder.io/partytown@0.10.2':
     resolution: {integrity: sha512-A9U+4PREWcS+CCYzKGIPovtGB/PBgnH/8oQyCE6Nr9drDJk6cMPpLQIEajpGPmG9tYF7N3FkRvhXm/AS9+0iKg==}
     engines: {node: '>=18.0.0'}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
     hasBin: true
 
   '@emnapi/runtime@1.2.0':
@@ -1418,8 +1419,8 @@ packages:
     resolution: {integrity: sha512-/mMTei/JXPqvFqQtfyTowxmJVwr2PVAeCcDxyFf6LhoOu/09TX2OX3kb2wzi4DMXcfj4OItwDOnhl5oziPnT6g==}
     engines: {node: '>=14'}
 
-  date-fns@2.29.3:
-    resolution: {integrity: sha512-dDCnyH2WnnKusqvZZ6+jA1O51Ibt8ZMRNkDZdyAyK4YfbDwa/cEmuztzG5pk6hqlp9aSBPYcjOlktquahGwGeA==}
+  date-fns@2.30.0:
+    resolution: {integrity: sha512-fnULvOpxnC5/Vg3NCiWelDsLiUc9bRwAPs/+LfTLNvetFCtCTN+yQz15C/fs4AwX1R9K5GLtLfn8QW+dWisaAw==}
     engines: {node: '>=0.11'}
 
   debug@4.3.4:
@@ -4343,7 +4344,9 @@ snapshots:
       whatwg-mimetype: 3.0.0
       whatwg-url: 12.0.1
 
-  date-fns@2.29.3: {}
+  date-fns@2.30.0:
+    dependencies:
+      '@babel/runtime': 7.22.6
 
   debug@4.3.4:
     dependencies:
