@@ -1,0 +1,125 @@
+---
+layout: "../../layouts/BlogLayout.astro"
+title: "2025年ふりかえり"
+description: "2025年のふりかえりです。"
+date: "2025-12-31"
+image: "/images/blog/2025.png"
+---
+
+import OG from "../../components/OG.astro";
+
+2025年のふりかえりです。
+
+## 1月
+
+- 軽く Swift、SwiftUI の勉強を始めた
+- `@nuxt/test-utils`にいくつか Pull Request を出した
+- 作ってる Web アプリケーションの Nuxt 4 移行を考え始めた
+  - `sass`の`@import`がめっちゃ残ってたので頭を抱えてた
+- Nuxt Bridge v3.4 Release 🎉
+- 新たな副業を始めた
+
+## 2月
+
+- passkey のキャッチアップをして、作ってる Web アプリケーションに導入した
+- 仕事が忙しくなる
+- nuxt nightly を使って CI を定期実行する仕組みを作った
+  - https://product.st.inc/entry/2025/02/03/160859 を見て Nuxt もあるといいなと思って作ってみた
+
+## 3月
+
+- https://uilabs.wattanx.dev/hold-animation を作った
+- https://uilabs.wattanx.dev/stack-dialog を作った
+- https://nuxt.com/team が爆誕し、自分も載ってた
+- 仕事がめちゃくちゃ忙しくなる
+  - リアルタイムで作られていくデザインと並行して実装を進める高速 UI 建築職人をやってた
+- `tailwindcss`の AST Explorer を作り始めるが、忙しすぎて中断
+
+## 4月
+
+- 社会人 7 年目に突入
+- design engineer を名乗りはじめた
+- https://github.com/wattanx/wattanx-converter/tree/main/packages/mcp-server を作った
+- 人生で初めて国士無双を出す
+
+## 5月
+
+- 社内 UI コンポーネントライブラリ用の MCP Server を作った
+- https://github.com/rrweb-io/rrweb を使って、ユーザーの操作を再生できるプロトタイプを作った
+- https://zenn.dev/link/comments/6f7d41559984db を書いた
+- Nuxt Bridge v3.5 Release 🎉
+
+## 6月
+
+- https://uilabs.wattanx.dev/button を作った
+- 社内 UI コンポーネントライブラリにめちゃくちゃコミットしてた
+- Claude Code Max プランに課金開始
+- [v-tokyo#23](https://vuejs-meetup.connpass.com/event/355473)に参加
+- 上期のお仕事で作成した Pull Request 数は 545 だった
+
+## 7月
+
+- 社内 UI コンポーネントライブラリのビルドツールを[`tsdown`](https://tsdown.dev/)に移行した
+- 社内の UI コンポーネントライブラリのドキュメントを`Astro`で作る意思決定をした
+- AI のおかげで社内 UI コンポーネントライブラリが捗る
+- 29歳になった
+- 淡路島に行ってきた
+- 下期は上期より忙しくなりそうなのがみえてたので、1月に始めた副業をやめた
+
+## 8月
+
+- 妻が書いたイラストをアクリルキーホルダーにした
+  - 2026年に販売したりするかも
+- [Nuxt Ecosystem Team のメンバーになりました](https://product.st.inc/entry/2025/08/18/105908)を書いた
+- 作ってる Web アプリケーションの Nuxt 4 移行を開始
+- Nuxt Bridge v3.6 Release 🎉
+
+## 9月
+
+- Amazon からきてた Switch 2 の招待メールを見逃してしまう
+- [Web UI 実装勉強会 #1](https://ui-devs.connpass.com/event/364448)で登壇した
+  - https://talks.wattanx.dev/2025/web-ui
+- 業務でネイティブアプリを作り始めた
+- Swift、Kotlin のキャッチアップを開始
+- https://uilabs.wattanx.dev をリニューアル
+  - トップページでそれぞれのアニメーションのデモが見られるようにした
+- UNDERTALE 10th Anniversary Concert に行ってきた
+- Switch 2 が購入できた
+- 作ってる Web アプリケーションの Nuxt 4 移行が完了
+  - 詳しいお話は[Nuxt4 アップグレードのススメ](https://product.st.inc/entry/2025/11/10/150235)に
+
+## 10月
+
+- Swift、Kotlin を書く日々
+- Vue Fes の資料と並行して 社の Tech Conf 用の資料を作ってた
+- [Vue Fes Japan 2025](https://vuefes.jp/2025)に登壇
+  - 3回目の登壇
+  - https://talks.wattanx.dev/2025/vue-fes-japan
+- アレフガルドへ旅立つ
+
+## 11月
+
+- [ヒロアカの原画展](https://heroaca-ex.com/)に行ってきた
+- [Vue Fes Japan 2025 After Talk](https://yappli.connpass.com/event/368396)に登壇
+  - https://talks.wattanx.dev/2025/vue-fes-after-talk
+- Kotlin で Streaming のキャンセル実装で苦しむ
+  - https://github.com/wattanx/ktor-sse-example で minimal example を作って解決した
+  - https://github.com/wattanx/ktor-sse-example/blob/main/shared/src/commonMain/kotlin/org/example/project/sse/SseClient.kt#L47 がないと Swift 側でキャンセルができないという難しい問題だった
+- [フロントエンドカンファレンス関西 2025](https://frontend-conf.osaka.jp/)に登壇
+
+## 12月
+
+- 業務で作っていたネイティブアプリがリリースされた
+- チャットの体験をめちゃくちゃ改善してた(上記のネイティブアプリ内にあるチャット機能)
+- SwiftUI で Streaming Response の markdown をええ感じに表示する実装をした
+  - https://ai-sdk.dev/cookbook/next/markdown-chatbot-with-memoization と https://github.com/vercel/streamdown を参考にした
+- 下期のお仕事で作成した Pull Request 数は 528 だった
+  - 自分で作った Pull Request は減っていて、AI Agent による Pull Request が増えている
+
+## 来年やりたいこと
+
+- どこかで SwiftUI の話をしたい
+  - 今年はアニメーションの話をしたいと思っていて、実際に話せた
+  - 業務でがっつり SwiftUI を書いてたので、来年は SwiftUI の話をしたい
+- 家計簿をちゃんとつける
+- ネットショップを開設したい
