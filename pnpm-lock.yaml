@@ -61,8 +61,8 @@ importers:
         specifier: 3.0.1
         version: 3.0.1
       '@types/fs-extra':
-        specifier: 9.0.13
-        version: 9.0.13
+        specifier: 11.0.4
+        version: 11.0.4
       '@types/jsdom':
         specifier: 21.1.7
         version: 21.1.7
@@ -76,8 +76,8 @@ importers:
         specifier: 3.2.4
         version: 3.2.4
       fs-extra:
-        specifier: 11.1.0
-        version: 11.1.0
+        specifier: 11.3.3
+        version: 11.3.3
       jsdom:
         specifier: 21.1.2
         version: 21.1.2
@@ -1091,14 +1091,17 @@ packages:
   '@types/fontkit@2.0.8':
     resolution: {integrity: sha512-wN+8bYxIpJf+5oZdrdtaX04qUuWHcKxcDEgRS9Qm9ZClSHjzEn13SxUC+5eRM+4yXIeTYk8mTzLAWGF64847ew==}
 
-  '@types/fs-extra@9.0.13':
-    resolution: {integrity: sha512-nEnwB++1u5lVDM2UI4c1+5R+FYaKfaAzS4OococimjVm3nQw3TuzH5UNsocrcTBbhnerblyHj4A49qXbIiZdpA==}
+  '@types/fs-extra@11.0.4':
+    resolution: {integrity: sha512-yTbItCNreRooED33qjunPthRcSjERP1r4MqCZc7wv0u2sUkzTFp45tgUfS5+r7FrZPdmCCNflLhVSP/o+SemsQ==}
 
   '@types/hast@3.0.4':
     resolution: {integrity: sha512-WPs+bbQw5aCj+x6laNGWLH3wviHtoCv/P3+otBhbOhJgG8qtpdAMlTCxLtsTWA7LH1Oh/bFCHsBn0TPS5m30EQ==}
 
   '@types/jsdom@21.1.7':
     resolution: {integrity: sha512-yOriVnggzrnQ3a9OKOCxaVuSug3w3/SbOj5i7VwXWZEyUNl3bLF9V3MfxGbZKuwqJOQyRfqXyROBB1CoZLFWzA==}
+
+  '@types/jsonfile@6.1.4':
+    resolution: {integrity: sha512-D5qGUYwjvnNNextdU59/+fI+spnwtTFmyQP0h+PfIOSkNfpU6AOICUOkm4i0OnSk+NyjdPJrxCDro0sJsWlRpQ==}
 
   '@types/mdast@3.0.12':
     resolution: {integrity: sha512-DT+iNIRNX884cx0/Q1ja7NyUPpZuv0KPyL5rGNxm1WC1OtHstl7n4Jb7nk+xacNShQMbczJjt8uFzznpp6kYBg==}
@@ -1702,8 +1705,8 @@ packages:
   fraction.js@4.3.7:
     resolution: {integrity: sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==}
 
-  fs-extra@11.1.0:
-    resolution: {integrity: sha512-0rcTq621PD5jM/e0a3EJoGC/1TC5ZBCERW82LQuwfGnCa1V8w7dpYH1yNu+SLb6E5dkeCBzKEyLGlFrnr+dUyw==}
+  fs-extra@11.3.3:
+    resolution: {integrity: sha512-VWSRii4t0AFm6ixFFmLLx1t7wS1gh+ckoa84aOeapGum0h+EZd1EhEumSB+ZdDLnEPuucsVB9oB7cxJHap6Afg==}
     engines: {node: '>=14.14'}
 
   fs.realpath@1.0.0:
@@ -3977,8 +3980,9 @@ snapshots:
     dependencies:
       '@types/node': 20.4.4
 
-  '@types/fs-extra@9.0.13':
+  '@types/fs-extra@11.0.4':
     dependencies:
+      '@types/jsonfile': 6.1.4
       '@types/node': 20.4.4
 
   '@types/hast@3.0.4':
@@ -3990,6 +3994,10 @@ snapshots:
       '@types/node': 20.4.4
       '@types/tough-cookie': 4.0.2
       parse5: 7.1.2
+
+  '@types/jsonfile@6.1.4':
+    dependencies:
+      '@types/node': 20.4.4
 
   '@types/mdast@3.0.12':
     dependencies:
@@ -4697,7 +4705,7 @@ snapshots:
 
   fraction.js@4.3.7: {}
 
-  fs-extra@11.1.0:
+  fs-extra@11.3.3:
     dependencies:
       graceful-fs: 4.2.11
       jsonfile: 6.1.0
